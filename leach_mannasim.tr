@@ -1,0 +1,170 @@
+s -t 0.005353427 -Hs 8 -Hd -2 -Ni 8 -Nx 291.66 -Ny 404.18 -Nz 0.00 -Ne 10.000000 -Nl AGT -Nw --- -Ma 0 -Md 8000000 -Ms 0 -Mt 0 -Is 8.0 -Id -1.0 -It tcp -Il 1 -If 0 -Ii 0 -Iv 32 -Pn tcp -Ps 0 -Pa 0 -Pf 0 -Po 0 
+r -t 0.005353427 -Hs 8 -Hd -2 -Ni 8 -Nx 291.66 -Ny 404.18 -Nz 0.00 -Ne 10.000000 -Nl RTR -Nw --- -Ma 0 -Md 8000000 -Ms 0 -Mt 0 -Is 8.0 -Id -1.0 -It tcp -Il 1 -If 0 -Ii 0 -Iv 32 -Pn tcp -Ps 0 -Pa 0 -Pf 0 -Po 0 
+s -t 0.005353427 -Hs 8 -Hd -2 -Ni 8 -Nx 291.66 -Ny 404.18 -Nz 0.00 -Ne 10.000000 -Nl RTR -Nw --- -Ma 0 -Md 8000000 -Ms 0 -Mt 0 -Is 8.0 -Id -1.0 -It tcp -Il 1 -If 0 -Ii 0 -Iv 32 -Pn tcp -Ps 0 -Pa 0 -Pf 0 -Po 0 
+s -t 0.005378427 -Hs 8 -Hd -2 -Ni 8 -Nx 291.66 -Ny 404.18 -Nz 0.00 -Ne 10.000000 -Nl MAC -Nw --- -Ma 0 -Md 8000000 -Ms ffff0008 -Mt 0 -Is 8.0 -Id -1.0 -It tcp -Il 21 -If 0 -Ii 0 -Iv 32 -Pn tcp -Ps 0 -Pa 0 -Pf 0 -Po 0 
+N -t 0.005379 -n 6 -e 9.999998
+N -t 0.005379 -n 7 -e 9.999998
+N -t 0.005379 -n 4 -e 9.999998
+N -t 0.005379 -n 5 -e 9.999998
+N -t 0.005379 -n 9 -e 9.999998
+N -t 0.005380 -n 10 -e 9.999998
+N -t 0.005380 -n 1 -e 9.999998
+N -t 0.005380 -n 3 -e 9.999998
+N -t 0.005380 -n 0 -e 99.999958
+N -t 0.005380 -n 2 -e 9.999998
+r -t 0.005462686 -Hs 6 -Hd -2 -Ni 6 -Nx 365.89 -Ny 426.62 -Nz 0.00 -Ne 9.999998 -Nl MAC -Nw --- -Ma 0 -Md 8000000 -Ms ffff0008 -Mt 0 -Is 8.0 -Id -1.0 -It tcp -Il 1 -If 0 -Ii 0 -Iv 32 -Pn tcp -Ps 0 -Pa 0 -Pf 1 -Po 0 
+r -t 0.005462929 -Hs 7 -Hd -2 -Ni 7 -Nx 275.15 -Ny 254.48 -Nz 0.00 -Ne 9.999998 -Nl MAC -Nw --- -Ma 0 -Md 8000000 -Ms ffff0008 -Mt 0 -Is 8.0 -Id -1.0 -It tcp -Il 1 -If 0 -Ii 0 -Iv 32 -Pn tcp -Ps 0 -Pa 0 -Pf 1 -Po 0 
+r -t 0.005463318 -Hs 4 -Hd -2 -Ni 4 -Nx 450.18 -Ny 189.01 -Nz 0.00 -Ne 9.999998 -Nl MAC -Nw --- -Ma 0 -Md 8000000 -Ms ffff0008 -Mt 0 -Is 8.0 -Id -1.0 -It tcp -Il 1 -If 0 -Ii 0 -Iv 32 -Pn tcp -Ps 0 -Pa 0 -Pf 1 -Po 0 
+r -t 0.005463366 -Hs 5 -Hd -2 -Ni 5 -Nx 20.41 -Ny 479.79 -Nz 0.00 -Ne 9.999998 -Nl MAC -Nw --- -Ma 0 -Md 8000000 -Ms ffff0008 -Mt 0 -Is 8.0 -Id -1.0 -It tcp -Il 1 -If 0 -Ii 0 -Iv 32 -Pn tcp -Ps 0 -Pa 0 -Pf 1 -Po 0 
+r -t 0.005463402 -Hs 9 -Hd -2 -Ni 9 -Nx 282.10 -Ny 112.00 -Nz 0.00 -Ne 9.999998 -Nl MAC -Nw --- -Ma 0 -Md 8000000 -Ms ffff0008 -Mt 0 -Is 8.0 -Id -1.0 -It tcp -Il 1 -If 0 -Ii 0 -Iv 32 -Pn tcp -Ps 0 -Pa 0 -Pf 1 -Po 0 
+r -t 0.005463629 -Hs 10 -Hd -2 -Ni 10 -Nx 213.50 -Ny 52.24 -Nz 0.00 -Ne 9.999998 -Nl MAC -Nw --- -Ma 0 -Md 8000000 -Ms ffff0008 -Mt 0 -Is 8.0 -Id -1.0 -It tcp -Il 1 -If 0 -Ii 0 -Iv 32 -Pn tcp -Ps 0 -Pa 0 -Pf 1 -Po 0 
+r -t 0.005463738 -Hs 1 -Hd -2 -Ni 1 -Nx 490.02 -Ny 64.51 -Nz 0.00 -Ne 9.999998 -Nl MAC -Nw --- -Ma 0 -Md 8000000 -Ms ffff0008 -Mt 0 -Is 8.0 -Id -1.0 -It tcp -Il 1 -If 0 -Ii 0 -Iv 32 -Pn tcp -Ps 0 -Pa 0 -Pf 1 -Po 0 
+r -t 0.005463754 -Hs 3 -Hd -2 -Ni 3 -Nx 18.83 -Ny 114.45 -Nz 0.00 -Ne 9.999998 -Nl MAC -Nw --- -Ma 0 -Md 8000000 -Ms ffff0008 -Mt 0 -Is 8.0 -Id -1.0 -It tcp -Il 1 -If 0 -Ii 0 -Iv 32 -Pn tcp -Ps 0 -Pa 0 -Pf 1 -Po 0 
+r -t 0.005463856 -Hs 0 -Hd -2 -Ni 0 -Nx 50.00 -Ny 50.00 -Nz 0.00 -Ne 99.999958 -Nl MAC -Nw --- -Ma 0 -Md 8000000 -Ms ffff0008 -Mt 0 -Is 8.0 -Id -1.0 -It tcp -Il 1 -If 0 -Ii 0 -Iv 32 -Pn tcp -Ps 0 -Pa 0 -Pf 1 -Po 0 
+r -t 0.005463858 -Hs 2 -Hd -2 -Ni 2 -Nx 37.96 -Ny 57.88 -Nz 0.00 -Ne 9.999998 -Nl MAC -Nw --- -Ma 0 -Md 8000000 -Ms ffff0008 -Mt 0 -Is 8.0 -Id -1.0 -It tcp -Il 1 -If 0 -Ii 0 -Iv 32 -Pn tcp -Ps 0 -Pa 0 -Pf 1 -Po 0 
+r -t 0.005487686 -Hs 6 -Hd -2 -Ni 6 -Nx 365.89 -Ny 426.62 -Nz 0.00 -Ne 9.999998 -Nl RTR -Nw --- -Ma 0 -Md 8000000 -Ms ffff0008 -Mt 0 -Is 8.0 -Id -1.0 -It tcp -Il 1 -If 0 -Ii 0 -Iv 32 -Pn tcp -Ps 0 -Pa 0 -Pf 1 -Po 0 
+r -t 0.005487686 -Hs 6 -Hd -2 -Ni 6 -Nx 365.89 -Ny 426.62 -Nz 0.00 -Ne 9.999998 -Nl AGT -Nw --- -Ma 0 -Md 8000000 -Ms ffff0008 -Mt 0 -Is 8.0 -Id -1.0 -It tcp -Il 1 -If 0 -Ii 0 -Iv 32 -Pn tcp -Ps 0 -Pa 0 -Pf 1 -Po 0 
+r -t 0.005487929 -Hs 7 -Hd -2 -Ni 7 -Nx 275.15 -Ny 254.48 -Nz 0.00 -Ne 9.999998 -Nl RTR -Nw --- -Ma 0 -Md 8000000 -Ms ffff0008 -Mt 0 -Is 8.0 -Id -1.0 -It tcp -Il 1 -If 0 -Ii 0 -Iv 32 -Pn tcp -Ps 0 -Pa 0 -Pf 1 -Po 0 
+r -t 0.005487929 -Hs 7 -Hd -2 -Ni 7 -Nx 275.15 -Ny 254.48 -Nz 0.00 -Ne 9.999998 -Nl AGT -Nw --- -Ma 0 -Md 8000000 -Ms ffff0008 -Mt 0 -Is 8.0 -Id -1.0 -It tcp -Il 1 -If 0 -Ii 0 -Iv 32 -Pn tcp -Ps 0 -Pa 0 -Pf 1 -Po 0 
+r -t 0.005488318 -Hs 4 -Hd -2 -Ni 4 -Nx 450.18 -Ny 189.01 -Nz 0.00 -Ne 9.999998 -Nl RTR -Nw --- -Ma 0 -Md 8000000 -Ms ffff0008 -Mt 0 -Is 8.0 -Id -1.0 -It tcp -Il 1 -If 0 -Ii 0 -Iv 32 -Pn tcp -Ps 0 -Pa 0 -Pf 1 -Po 0 
+r -t 0.005488318 -Hs 4 -Hd -2 -Ni 4 -Nx 450.18 -Ny 189.01 -Nz 0.00 -Ne 9.999998 -Nl AGT -Nw --- -Ma 0 -Md 8000000 -Ms ffff0008 -Mt 0 -Is 8.0 -Id -1.0 -It tcp -Il 1 -If 0 -Ii 0 -Iv 32 -Pn tcp -Ps 0 -Pa 0 -Pf 1 -Po 0 
+r -t 0.005488366 -Hs 5 -Hd -2 -Ni 5 -Nx 20.41 -Ny 479.79 -Nz 0.00 -Ne 9.999998 -Nl RTR -Nw --- -Ma 0 -Md 8000000 -Ms ffff0008 -Mt 0 -Is 8.0 -Id -1.0 -It tcp -Il 1 -If 0 -Ii 0 -Iv 32 -Pn tcp -Ps 0 -Pa 0 -Pf 1 -Po 0 
+r -t 0.005488366 -Hs 5 -Hd -2 -Ni 5 -Nx 20.41 -Ny 479.79 -Nz 0.00 -Ne 9.999998 -Nl AGT -Nw --- -Ma 0 -Md 8000000 -Ms ffff0008 -Mt 0 -Is 8.0 -Id -1.0 -It tcp -Il 1 -If 0 -Ii 0 -Iv 32 -Pn tcp -Ps 0 -Pa 0 -Pf 1 -Po 0 
+r -t 0.005488402 -Hs 9 -Hd -2 -Ni 9 -Nx 282.10 -Ny 112.00 -Nz 0.00 -Ne 9.999998 -Nl RTR -Nw --- -Ma 0 -Md 8000000 -Ms ffff0008 -Mt 0 -Is 8.0 -Id -1.0 -It tcp -Il 1 -If 0 -Ii 0 -Iv 32 -Pn tcp -Ps 0 -Pa 0 -Pf 1 -Po 0 
+r -t 0.005488402 -Hs 9 -Hd -2 -Ni 9 -Nx 282.10 -Ny 112.00 -Nz 0.00 -Ne 9.999998 -Nl AGT -Nw --- -Ma 0 -Md 8000000 -Ms ffff0008 -Mt 0 -Is 8.0 -Id -1.0 -It tcp -Il 1 -If 0 -Ii 0 -Iv 32 -Pn tcp -Ps 0 -Pa 0 -Pf 1 -Po 0 
+r -t 0.005488629 -Hs 10 -Hd -2 -Ni 10 -Nx 213.50 -Ny 52.24 -Nz 0.00 -Ne 9.999998 -Nl RTR -Nw --- -Ma 0 -Md 8000000 -Ms ffff0008 -Mt 0 -Is 8.0 -Id -1.0 -It tcp -Il 1 -If 0 -Ii 0 -Iv 32 -Pn tcp -Ps 0 -Pa 0 -Pf 1 -Po 0 
+r -t 0.005488629 -Hs 10 -Hd -2 -Ni 10 -Nx 213.50 -Ny 52.24 -Nz 0.00 -Ne 9.999998 -Nl AGT -Nw --- -Ma 0 -Md 8000000 -Ms ffff0008 -Mt 0 -Is 8.0 -Id -1.0 -It tcp -Il 1 -If 0 -Ii 0 -Iv 32 -Pn tcp -Ps 0 -Pa 0 -Pf 1 -Po 0 
+r -t 0.005488738 -Hs 1 -Hd -2 -Ni 1 -Nx 490.02 -Ny 64.51 -Nz 0.00 -Ne 9.999998 -Nl RTR -Nw --- -Ma 0 -Md 8000000 -Ms ffff0008 -Mt 0 -Is 8.0 -Id -1.0 -It tcp -Il 1 -If 0 -Ii 0 -Iv 32 -Pn tcp -Ps 0 -Pa 0 -Pf 1 -Po 0 
+r -t 0.005488738 -Hs 1 -Hd -2 -Ni 1 -Nx 490.02 -Ny 64.51 -Nz 0.00 -Ne 9.999998 -Nl AGT -Nw --- -Ma 0 -Md 8000000 -Ms ffff0008 -Mt 0 -Is 8.0 -Id -1.0 -It tcp -Il 1 -If 0 -Ii 0 -Iv 32 -Pn tcp -Ps 0 -Pa 0 -Pf 1 -Po 0 
+r -t 0.005488754 -Hs 3 -Hd -2 -Ni 3 -Nx 18.83 -Ny 114.45 -Nz 0.00 -Ne 9.999998 -Nl RTR -Nw --- -Ma 0 -Md 8000000 -Ms ffff0008 -Mt 0 -Is 8.0 -Id -1.0 -It tcp -Il 1 -If 0 -Ii 0 -Iv 32 -Pn tcp -Ps 0 -Pa 0 -Pf 1 -Po 0 
+r -t 0.005488754 -Hs 3 -Hd -2 -Ni 3 -Nx 18.83 -Ny 114.45 -Nz 0.00 -Ne 9.999998 -Nl AGT -Nw --- -Ma 0 -Md 8000000 -Ms ffff0008 -Mt 0 -Is 8.0 -Id -1.0 -It tcp -Il 1 -If 0 -Ii 0 -Iv 32 -Pn tcp -Ps 0 -Pa 0 -Pf 1 -Po 0 
+r -t 0.005488856 -Hs 0 -Hd -2 -Ni 0 -Nx 50.00 -Ny 50.00 -Nz 0.00 -Ne 99.999958 -Nl RTR -Nw --- -Ma 0 -Md 8000000 -Ms ffff0008 -Mt 0 -Is 8.0 -Id -1.0 -It tcp -Il 1 -If 0 -Ii 0 -Iv 32 -Pn tcp -Ps 0 -Pa 0 -Pf 1 -Po 0 
+r -t 0.005488856 -Hs 0 -Hd -2 -Ni 0 -Nx 50.00 -Ny 50.00 -Nz 0.00 -Ne 99.999958 -Nl AGT -Nw --- -Ma 0 -Md 8000000 -Ms ffff0008 -Mt 0 -Is 8.0 -Id -1.0 -It tcp -Il 1 -If 0 -Ii 0 -Iv 32 -Pn tcp -Ps 0 -Pa 0 -Pf 1 -Po 0 
+r -t 0.005488858 -Hs 2 -Hd -2 -Ni 2 -Nx 37.96 -Ny 57.88 -Nz 0.00 -Ne 9.999998 -Nl RTR -Nw --- -Ma 0 -Md 8000000 -Ms ffff0008 -Mt 0 -Is 8.0 -Id -1.0 -It tcp -Il 1 -If 0 -Ii 0 -Iv 32 -Pn tcp -Ps 0 -Pa 0 -Pf 1 -Po 0 
+r -t 0.005488858 -Hs 2 -Hd -2 -Ni 2 -Nx 37.96 -Ny 57.88 -Nz 0.00 -Ne 9.999998 -Nl AGT -Nw --- -Ma 0 -Md 8000000 -Ms ffff0008 -Mt 0 -Is 8.0 -Id -1.0 -It tcp -Il 1 -If 0 -Ii 0 -Iv 32 -Pn tcp -Ps 0 -Pa 0 -Pf 1 -Po 0 
+s -t 0.403955535 -Hs 3 -Hd -2 -Ni 3 -Nx 18.83 -Ny 114.45 -Nz 0.00 -Ne 9.993660 -Nl AGT -Nw --- -Ma 0 -Md 3000000 -Ms 0 -Mt 0 -Is 3.0 -Id -1.0 -It tcp -Il 1 -If 0 -Ii 1 -Iv 32 -Pn tcp -Ps 0 -Pa 0 -Pf 0 -Po 0 
+r -t 0.403955535 -Hs 3 -Hd -2 -Ni 3 -Nx 18.83 -Ny 114.45 -Nz 0.00 -Ne 9.993660 -Nl RTR -Nw --- -Ma 0 -Md 3000000 -Ms 0 -Mt 0 -Is 3.0 -Id -1.0 -It tcp -Il 1 -If 0 -Ii 1 -Iv 32 -Pn tcp -Ps 0 -Pa 0 -Pf 0 -Po 0 
+s -t 0.403955535 -Hs 3 -Hd -2 -Ni 3 -Nx 18.83 -Ny 114.45 -Nz 0.00 -Ne 9.993660 -Nl RTR -Nw --- -Ma 0 -Md 3000000 -Ms 0 -Mt 0 -Is 3.0 -Id -1.0 -It tcp -Il 1 -If 0 -Ii 1 -Iv 32 -Pn tcp -Ps 0 -Pa 0 -Pf 0 -Po 0 
+s -t 0.403980535 -Hs 3 -Hd -2 -Ni 3 -Nx 18.83 -Ny 114.45 -Nz 0.00 -Ne 9.993660 -Nl MAC -Nw --- -Ma 0 -Md 3000000 -Ms ffff0008 -Mt 0 -Is 3.0 -Id -1.0 -It tcp -Il 21 -If 0 -Ii 1 -Iv 32 -Pn tcp -Ps 0 -Pa 0 -Pf 0 -Po 0 
+N -t 0.403981 -n 2 -e 9.993658
+N -t 0.403981 -n 0 -e 99.999916
+N -t 0.403981 -n 10 -e 9.993658
+N -t 0.403981 -n 9 -e 9.993658
+N -t 0.403982 -n 7 -e 9.993658
+N -t 0.403982 -n 5 -e 9.993658
+N -t 0.403982 -n 8 -e 9.993615
+N -t 0.403982 -n 4 -e 9.993658
+N -t 0.403982 -n 6 -e 9.993658
+N -t 0.403982 -n 1 -e 9.993658
+r -t 0.404064734 -Hs 2 -Hd -2 -Ni 2 -Nx 37.96 -Ny 57.88 -Nz 0.00 -Ne 9.993658 -Nl MAC -Nw --- -Ma 0 -Md 3000000 -Ms ffff0008 -Mt 0 -Is 3.0 -Id -1.0 -It tcp -Il 1 -If 0 -Ii 1 -Iv 32 -Pn tcp -Ps 0 -Pa 0 -Pf 1 -Po 0 
+r -t 0.404064773 -Hs 0 -Hd -2 -Ni 0 -Nx 50.00 -Ny 50.00 -Nz 0.00 -Ne 99.999916 -Nl MAC -Nw --- -Ma 0 -Md 3000000 -Ms ffff0008 -Mt 0 -Is 3.0 -Id -1.0 -It tcp -Il 1 -If 0 -Ii 1 -Iv 32 -Pn tcp -Ps 0 -Pa 0 -Pf 1 -Po 0 
+r -t 0.404065216 -Hs 10 -Hd -2 -Ni 10 -Nx 213.50 -Ny 52.24 -Nz 0.00 -Ne 9.993658 -Nl MAC -Nw --- -Ma 0 -Md 3000000 -Ms ffff0008 -Mt 0 -Is 3.0 -Id -1.0 -It tcp -Il 1 -If 0 -Ii 1 -Iv 32 -Pn tcp -Ps 0 -Pa 0 -Pf 1 -Po 0 
+r -t 0.404065412 -Hs 9 -Hd -2 -Ni 9 -Nx 282.10 -Ny 112.00 -Nz 0.00 -Ne 9.993658 -Nl MAC -Nw --- -Ma 0 -Md 3000000 -Ms ffff0008 -Mt 0 -Is 3.0 -Id -1.0 -It tcp -Il 1 -If 0 -Ii 1 -Iv 32 -Pn tcp -Ps 0 -Pa 0 -Pf 1 -Po 0 
+r -t 0.404065508 -Hs 7 -Hd -2 -Ni 7 -Nx 275.15 -Ny 254.48 -Nz 0.00 -Ne 9.993658 -Nl MAC -Nw --- -Ma 0 -Md 3000000 -Ms ffff0008 -Mt 0 -Is 3.0 -Id -1.0 -It tcp -Il 1 -If 0 -Ii 1 -Iv 32 -Pn tcp -Ps 0 -Pa 0 -Pf 1 -Po 0 
+r -t 0.404065753 -Hs 5 -Hd -2 -Ni 5 -Nx 20.41 -Ny 479.79 -Nz 0.00 -Ne 9.993658 -Nl MAC -Nw --- -Ma 0 -Md 3000000 -Ms ffff0008 -Mt 0 -Is 3.0 -Id -1.0 -It tcp -Il 1 -If 0 -Ii 1 -Iv 32 -Pn tcp -Ps 0 -Pa 0 -Pf 1 -Po 0 
+r -t 0.404065994 -Hs 4 -Hd -2 -Ni 4 -Nx 450.18 -Ny 189.01 -Nz 0.00 -Ne 9.993658 -Nl MAC -Nw --- -Ma 0 -Md 3000000 -Ms ffff0008 -Mt 0 -Is 3.0 -Id -1.0 -It tcp -Il 1 -If 0 -Ii 1 -Iv 32 -Pn tcp -Ps 0 -Pa 0 -Pf 1 -Po 0 
+r -t 0.404066091 -Hs 6 -Hd -2 -Ni 6 -Nx 365.89 -Ny 426.62 -Nz 0.00 -Ne 9.993658 -Nl MAC -Nw --- -Ma 0 -Md 3000000 -Ms ffff0008 -Mt 0 -Is 3.0 -Id -1.0 -It tcp -Il 1 -If 0 -Ii 1 -Iv 32 -Pn tcp -Ps 0 -Pa 0 -Pf 1 -Po 0 
+r -t 0.404066114 -Hs 1 -Hd -2 -Ni 1 -Nx 490.02 -Ny 64.51 -Nz 0.00 -Ne 9.993658 -Nl MAC -Nw --- -Ma 0 -Md 3000000 -Ms ffff0008 -Mt 0 -Is 3.0 -Id -1.0 -It tcp -Il 1 -If 0 -Ii 1 -Iv 32 -Pn tcp -Ps 0 -Pa 0 -Pf 1 -Po 0 
+r -t 0.404089734 -Hs 2 -Hd -2 -Ni 2 -Nx 37.96 -Ny 57.88 -Nz 0.00 -Ne 9.993658 -Nl RTR -Nw --- -Ma 0 -Md 3000000 -Ms ffff0008 -Mt 0 -Is 3.0 -Id -1.0 -It tcp -Il 1 -If 0 -Ii 1 -Iv 32 -Pn tcp -Ps 0 -Pa 0 -Pf 1 -Po 0 
+r -t 0.404089734 -Hs 2 -Hd -2 -Ni 2 -Nx 37.96 -Ny 57.88 -Nz 0.00 -Ne 9.993658 -Nl AGT -Nw --- -Ma 0 -Md 3000000 -Ms ffff0008 -Mt 0 -Is 3.0 -Id -1.0 -It tcp -Il 1 -If 0 -Ii 1 -Iv 32 -Pn tcp -Ps 0 -Pa 0 -Pf 1 -Po 0 
+r -t 0.404089773 -Hs 0 -Hd -2 -Ni 0 -Nx 50.00 -Ny 50.00 -Nz 0.00 -Ne 99.999916 -Nl RTR -Nw --- -Ma 0 -Md 3000000 -Ms ffff0008 -Mt 0 -Is 3.0 -Id -1.0 -It tcp -Il 1 -If 0 -Ii 1 -Iv 32 -Pn tcp -Ps 0 -Pa 0 -Pf 1 -Po 0 
+r -t 0.404089773 -Hs 0 -Hd -2 -Ni 0 -Nx 50.00 -Ny 50.00 -Nz 0.00 -Ne 99.999916 -Nl AGT -Nw --- -Ma 0 -Md 3000000 -Ms ffff0008 -Mt 0 -Is 3.0 -Id -1.0 -It tcp -Il 1 -If 0 -Ii 1 -Iv 32 -Pn tcp -Ps 0 -Pa 0 -Pf 1 -Po 0 
+r -t 0.404090216 -Hs 10 -Hd -2 -Ni 10 -Nx 213.50 -Ny 52.24 -Nz 0.00 -Ne 9.993658 -Nl RTR -Nw --- -Ma 0 -Md 3000000 -Ms ffff0008 -Mt 0 -Is 3.0 -Id -1.0 -It tcp -Il 1 -If 0 -Ii 1 -Iv 32 -Pn tcp -Ps 0 -Pa 0 -Pf 1 -Po 0 
+r -t 0.404090216 -Hs 10 -Hd -2 -Ni 10 -Nx 213.50 -Ny 52.24 -Nz 0.00 -Ne 9.993658 -Nl AGT -Nw --- -Ma 0 -Md 3000000 -Ms ffff0008 -Mt 0 -Is 3.0 -Id -1.0 -It tcp -Il 1 -If 0 -Ii 1 -Iv 32 -Pn tcp -Ps 0 -Pa 0 -Pf 1 -Po 0 
+r -t 0.404090412 -Hs 9 -Hd -2 -Ni 9 -Nx 282.10 -Ny 112.00 -Nz 0.00 -Ne 9.993658 -Nl RTR -Nw --- -Ma 0 -Md 3000000 -Ms ffff0008 -Mt 0 -Is 3.0 -Id -1.0 -It tcp -Il 1 -If 0 -Ii 1 -Iv 32 -Pn tcp -Ps 0 -Pa 0 -Pf 1 -Po 0 
+r -t 0.404090412 -Hs 9 -Hd -2 -Ni 9 -Nx 282.10 -Ny 112.00 -Nz 0.00 -Ne 9.993658 -Nl AGT -Nw --- -Ma 0 -Md 3000000 -Ms ffff0008 -Mt 0 -Is 3.0 -Id -1.0 -It tcp -Il 1 -If 0 -Ii 1 -Iv 32 -Pn tcp -Ps 0 -Pa 0 -Pf 1 -Po 0 
+r -t 0.404090508 -Hs 7 -Hd -2 -Ni 7 -Nx 275.15 -Ny 254.48 -Nz 0.00 -Ne 9.993658 -Nl RTR -Nw --- -Ma 0 -Md 3000000 -Ms ffff0008 -Mt 0 -Is 3.0 -Id -1.0 -It tcp -Il 1 -If 0 -Ii 1 -Iv 32 -Pn tcp -Ps 0 -Pa 0 -Pf 1 -Po 0 
+r -t 0.404090508 -Hs 7 -Hd -2 -Ni 7 -Nx 275.15 -Ny 254.48 -Nz 0.00 -Ne 9.993658 -Nl AGT -Nw --- -Ma 0 -Md 3000000 -Ms ffff0008 -Mt 0 -Is 3.0 -Id -1.0 -It tcp -Il 1 -If 0 -Ii 1 -Iv 32 -Pn tcp -Ps 0 -Pa 0 -Pf 1 -Po 0 
+r -t 0.404090753 -Hs 5 -Hd -2 -Ni 5 -Nx 20.41 -Ny 479.79 -Nz 0.00 -Ne 9.993658 -Nl RTR -Nw --- -Ma 0 -Md 3000000 -Ms ffff0008 -Mt 0 -Is 3.0 -Id -1.0 -It tcp -Il 1 -If 0 -Ii 1 -Iv 32 -Pn tcp -Ps 0 -Pa 0 -Pf 1 -Po 0 
+r -t 0.404090753 -Hs 5 -Hd -2 -Ni 5 -Nx 20.41 -Ny 479.79 -Nz 0.00 -Ne 9.993658 -Nl AGT -Nw --- -Ma 0 -Md 3000000 -Ms ffff0008 -Mt 0 -Is 3.0 -Id -1.0 -It tcp -Il 1 -If 0 -Ii 1 -Iv 32 -Pn tcp -Ps 0 -Pa 0 -Pf 1 -Po 0 
+r -t 0.404090994 -Hs 4 -Hd -2 -Ni 4 -Nx 450.18 -Ny 189.01 -Nz 0.00 -Ne 9.993658 -Nl RTR -Nw --- -Ma 0 -Md 3000000 -Ms ffff0008 -Mt 0 -Is 3.0 -Id -1.0 -It tcp -Il 1 -If 0 -Ii 1 -Iv 32 -Pn tcp -Ps 0 -Pa 0 -Pf 1 -Po 0 
+r -t 0.404090994 -Hs 4 -Hd -2 -Ni 4 -Nx 450.18 -Ny 189.01 -Nz 0.00 -Ne 9.993658 -Nl AGT -Nw --- -Ma 0 -Md 3000000 -Ms ffff0008 -Mt 0 -Is 3.0 -Id -1.0 -It tcp -Il 1 -If 0 -Ii 1 -Iv 32 -Pn tcp -Ps 0 -Pa 0 -Pf 1 -Po 0 
+r -t 0.404091091 -Hs 6 -Hd -2 -Ni 6 -Nx 365.89 -Ny 426.62 -Nz 0.00 -Ne 9.993658 -Nl RTR -Nw --- -Ma 0 -Md 3000000 -Ms ffff0008 -Mt 0 -Is 3.0 -Id -1.0 -It tcp -Il 1 -If 0 -Ii 1 -Iv 32 -Pn tcp -Ps 0 -Pa 0 -Pf 1 -Po 0 
+r -t 0.404091091 -Hs 6 -Hd -2 -Ni 6 -Nx 365.89 -Ny 426.62 -Nz 0.00 -Ne 9.993658 -Nl AGT -Nw --- -Ma 0 -Md 3000000 -Ms ffff0008 -Mt 0 -Is 3.0 -Id -1.0 -It tcp -Il 1 -If 0 -Ii 1 -Iv 32 -Pn tcp -Ps 0 -Pa 0 -Pf 1 -Po 0 
+r -t 0.404091114 -Hs 1 -Hd -2 -Ni 1 -Nx 490.02 -Ny 64.51 -Nz 0.00 -Ne 9.993658 -Nl RTR -Nw --- -Ma 0 -Md 3000000 -Ms ffff0008 -Mt 0 -Is 3.0 -Id -1.0 -It tcp -Il 1 -If 0 -Ii 1 -Iv 32 -Pn tcp -Ps 0 -Pa 0 -Pf 1 -Po 0 
+r -t 0.404091114 -Hs 1 -Hd -2 -Ni 1 -Nx 490.02 -Ny 64.51 -Nz 0.00 -Ne 9.993658 -Nl AGT -Nw --- -Ma 0 -Md 3000000 -Ms ffff0008 -Mt 0 -Is 3.0 -Id -1.0 -It tcp -Il 1 -If 0 -Ii 1 -Iv 32 -Pn tcp -Ps 0 -Pa 0 -Pf 1 -Po 0 
+s -t 0.549168195 -Hs 10 -Hd -2 -Ni 10 -Nx 213.50 -Ny 52.24 -Nz 0.00 -Ne 9.991383 -Nl AGT -Nw --- -Ma 0 -Md a000000 -Ms 0 -Mt 0 -Is 10.0 -Id -1.0 -It tcp -Il 1 -If 0 -Ii 2 -Iv 32 -Pn tcp -Ps 0 -Pa 0 -Pf 0 -Po 0 
+r -t 0.549168195 -Hs 10 -Hd -2 -Ni 10 -Nx 213.50 -Ny 52.24 -Nz 0.00 -Ne 9.991383 -Nl RTR -Nw --- -Ma 0 -Md a000000 -Ms 0 -Mt 0 -Is 10.0 -Id -1.0 -It tcp -Il 1 -If 0 -Ii 2 -Iv 32 -Pn tcp -Ps 0 -Pa 0 -Pf 0 -Po 0 
+s -t 0.549168195 -Hs 10 -Hd -2 -Ni 10 -Nx 213.50 -Ny 52.24 -Nz 0.00 -Ne 9.991383 -Nl RTR -Nw --- -Ma 0 -Md a000000 -Ms 0 -Mt 0 -Is 10.0 -Id -1.0 -It tcp -Il 1 -If 0 -Ii 2 -Iv 32 -Pn tcp -Ps 0 -Pa 0 -Pf 0 -Po 0 
+s -t 0.549193195 -Hs 10 -Hd -2 -Ni 10 -Nx 213.50 -Ny 52.24 -Nz 0.00 -Ne 9.991383 -Nl MAC -Nw --- -Ma 0 -Md a000000 -Ms ffff0008 -Mt 0 -Is 10.0 -Id -1.0 -It tcp -Il 21 -If 0 -Ii 2 -Iv 32 -Pn tcp -Ps 0 -Pa 0 -Pf 0 -Po 0 
+N -t 0.549193 -n 9 -e 9.991381
+N -t 0.549194 -n 0 -e 99.999874
+N -t 0.549194 -n 2 -e 9.991381
+N -t 0.549194 -n 3 -e 9.991338
+N -t 0.549194 -n 7 -e 9.991381
+N -t 0.549194 -n 4 -e 9.991381
+N -t 0.549194 -n 1 -e 9.991381
+N -t 0.549194 -n 8 -e 9.991338
+N -t 0.549195 -n 6 -e 9.991381
+N -t 0.549195 -n 5 -e 9.991381
+r -t 0.549277499 -Hs 9 -Hd -2 -Ni 9 -Nx 282.10 -Ny 112.00 -Nz 0.00 -Ne 9.991381 -Nl MAC -Nw --- -Ma 0 -Md a000000 -Ms ffff0008 -Mt 0 -Is 10.0 -Id -1.0 -It tcp -Il 1 -If 0 -Ii 2 -Iv 32 -Pn tcp -Ps 0 -Pa 0 -Pf 1 -Po 0 
+r -t 0.549277741 -Hs 0 -Hd -2 -Ni 0 -Nx 50.00 -Ny 50.00 -Nz 0.00 -Ne 99.999874 -Nl MAC -Nw --- -Ma 0 -Md a000000 -Ms ffff0008 -Mt 0 -Is 10.0 -Id -1.0 -It tcp -Il 1 -If 0 -Ii 2 -Iv 32 -Pn tcp -Ps 0 -Pa 0 -Pf 1 -Po 0 
+r -t 0.549277781 -Hs 2 -Hd -2 -Ni 2 -Nx 37.96 -Ny 57.88 -Nz 0.00 -Ne 9.991381 -Nl MAC -Nw --- -Ma 0 -Md a000000 -Ms ffff0008 -Mt 0 -Is 10.0 -Id -1.0 -It tcp -Il 1 -If 0 -Ii 2 -Iv 32 -Pn tcp -Ps 0 -Pa 0 -Pf 1 -Po 0 
+r -t 0.549277900 -Hs 7 -Hd -2 -Ni 7 -Nx 275.15 -Ny 254.48 -Nz 0.00 -Ne 9.991381 -Nl MAC -Nw --- -Ma 0 -Md a000000 -Ms ffff0008 -Mt 0 -Is 10.0 -Id -1.0 -It tcp -Il 1 -If 0 -Ii 2 -Iv 32 -Pn tcp -Ps 0 -Pa 0 -Pf 1 -Po 0 
+r -t 0.549278107 -Hs 4 -Hd -2 -Ni 4 -Nx 450.18 -Ny 189.01 -Nz 0.00 -Ne 9.991381 -Nl MAC -Nw --- -Ma 0 -Md a000000 -Ms ffff0008 -Mt 0 -Is 10.0 -Id -1.0 -It tcp -Il 1 -If 0 -Ii 2 -Iv 32 -Pn tcp -Ps 0 -Pa 0 -Pf 1 -Po 0 
+r -t 0.549278118 -Hs 1 -Hd -2 -Ni 1 -Nx 490.02 -Ny 64.51 -Nz 0.00 -Ne 9.991381 -Nl MAC -Nw --- -Ma 0 -Md a000000 -Ms ffff0008 -Mt 0 -Is 10.0 -Id -1.0 -It tcp -Il 1 -If 0 -Ii 2 -Iv 32 -Pn tcp -Ps 0 -Pa 0 -Pf 1 -Po 0 
+r -t 0.549278543 -Hs 6 -Hd -2 -Ni 6 -Nx 365.89 -Ny 426.62 -Nz 0.00 -Ne 9.991381 -Nl MAC -Nw --- -Ma 0 -Md a000000 -Ms ffff0008 -Mt 0 -Is 10.0 -Id -1.0 -It tcp -Il 1 -If 0 -Ii 2 -Iv 32 -Pn tcp -Ps 0 -Pa 0 -Pf 1 -Po 0 
+r -t 0.549278759 -Hs 5 -Hd -2 -Ni 5 -Nx 20.41 -Ny 479.79 -Nz 0.00 -Ne 9.991381 -Nl MAC -Nw --- -Ma 0 -Md a000000 -Ms ffff0008 -Mt 0 -Is 10.0 -Id -1.0 -It tcp -Il 1 -If 0 -Ii 2 -Iv 32 -Pn tcp -Ps 0 -Pa 0 -Pf 1 -Po 0 
+r -t 0.549302499 -Hs 9 -Hd -2 -Ni 9 -Nx 282.10 -Ny 112.00 -Nz 0.00 -Ne 9.991381 -Nl RTR -Nw --- -Ma 0 -Md a000000 -Ms ffff0008 -Mt 0 -Is 10.0 -Id -1.0 -It tcp -Il 1 -If 0 -Ii 2 -Iv 32 -Pn tcp -Ps 0 -Pa 0 -Pf 1 -Po 0 
+r -t 0.549302499 -Hs 9 -Hd -2 -Ni 9 -Nx 282.10 -Ny 112.00 -Nz 0.00 -Ne 9.991381 -Nl AGT -Nw --- -Ma 0 -Md a000000 -Ms ffff0008 -Mt 0 -Is 10.0 -Id -1.0 -It tcp -Il 1 -If 0 -Ii 2 -Iv 32 -Pn tcp -Ps 0 -Pa 0 -Pf 1 -Po 0 
+r -t 0.549302741 -Hs 0 -Hd -2 -Ni 0 -Nx 50.00 -Ny 50.00 -Nz 0.00 -Ne 99.999874 -Nl RTR -Nw --- -Ma 0 -Md a000000 -Ms ffff0008 -Mt 0 -Is 10.0 -Id -1.0 -It tcp -Il 1 -If 0 -Ii 2 -Iv 32 -Pn tcp -Ps 0 -Pa 0 -Pf 1 -Po 0 
+r -t 0.549302741 -Hs 0 -Hd -2 -Ni 0 -Nx 50.00 -Ny 50.00 -Nz 0.00 -Ne 99.999874 -Nl AGT -Nw --- -Ma 0 -Md a000000 -Ms ffff0008 -Mt 0 -Is 10.0 -Id -1.0 -It tcp -Il 1 -If 0 -Ii 2 -Iv 32 -Pn tcp -Ps 0 -Pa 0 -Pf 1 -Po 0 
+r -t 0.549302781 -Hs 2 -Hd -2 -Ni 2 -Nx 37.96 -Ny 57.88 -Nz 0.00 -Ne 9.991381 -Nl RTR -Nw --- -Ma 0 -Md a000000 -Ms ffff0008 -Mt 0 -Is 10.0 -Id -1.0 -It tcp -Il 1 -If 0 -Ii 2 -Iv 32 -Pn tcp -Ps 0 -Pa 0 -Pf 1 -Po 0 
+r -t 0.549302781 -Hs 2 -Hd -2 -Ni 2 -Nx 37.96 -Ny 57.88 -Nz 0.00 -Ne 9.991381 -Nl AGT -Nw --- -Ma 0 -Md a000000 -Ms ffff0008 -Mt 0 -Is 10.0 -Id -1.0 -It tcp -Il 1 -If 0 -Ii 2 -Iv 32 -Pn tcp -Ps 0 -Pa 0 -Pf 1 -Po 0 
+r -t 0.549302900 -Hs 7 -Hd -2 -Ni 7 -Nx 275.15 -Ny 254.48 -Nz 0.00 -Ne 9.991381 -Nl RTR -Nw --- -Ma 0 -Md a000000 -Ms ffff0008 -Mt 0 -Is 10.0 -Id -1.0 -It tcp -Il 1 -If 0 -Ii 2 -Iv 32 -Pn tcp -Ps 0 -Pa 0 -Pf 1 -Po 0 
+r -t 0.549302900 -Hs 7 -Hd -2 -Ni 7 -Nx 275.15 -Ny 254.48 -Nz 0.00 -Ne 9.991381 -Nl AGT -Nw --- -Ma 0 -Md a000000 -Ms ffff0008 -Mt 0 -Is 10.0 -Id -1.0 -It tcp -Il 1 -If 0 -Ii 2 -Iv 32 -Pn tcp -Ps 0 -Pa 0 -Pf 1 -Po 0 
+r -t 0.549303107 -Hs 4 -Hd -2 -Ni 4 -Nx 450.18 -Ny 189.01 -Nz 0.00 -Ne 9.991381 -Nl RTR -Nw --- -Ma 0 -Md a000000 -Ms ffff0008 -Mt 0 -Is 10.0 -Id -1.0 -It tcp -Il 1 -If 0 -Ii 2 -Iv 32 -Pn tcp -Ps 0 -Pa 0 -Pf 1 -Po 0 
+r -t 0.549303107 -Hs 4 -Hd -2 -Ni 4 -Nx 450.18 -Ny 189.01 -Nz 0.00 -Ne 9.991381 -Nl AGT -Nw --- -Ma 0 -Md a000000 -Ms ffff0008 -Mt 0 -Is 10.0 -Id -1.0 -It tcp -Il 1 -If 0 -Ii 2 -Iv 32 -Pn tcp -Ps 0 -Pa 0 -Pf 1 -Po 0 
+r -t 0.549303118 -Hs 1 -Hd -2 -Ni 1 -Nx 490.02 -Ny 64.51 -Nz 0.00 -Ne 9.991381 -Nl RTR -Nw --- -Ma 0 -Md a000000 -Ms ffff0008 -Mt 0 -Is 10.0 -Id -1.0 -It tcp -Il 1 -If 0 -Ii 2 -Iv 32 -Pn tcp -Ps 0 -Pa 0 -Pf 1 -Po 0 
+r -t 0.549303118 -Hs 1 -Hd -2 -Ni 1 -Nx 490.02 -Ny 64.51 -Nz 0.00 -Ne 9.991381 -Nl AGT -Nw --- -Ma 0 -Md a000000 -Ms ffff0008 -Mt 0 -Is 10.0 -Id -1.0 -It tcp -Il 1 -If 0 -Ii 2 -Iv 32 -Pn tcp -Ps 0 -Pa 0 -Pf 1 -Po 0 
+r -t 0.549303543 -Hs 6 -Hd -2 -Ni 6 -Nx 365.89 -Ny 426.62 -Nz 0.00 -Ne 9.991381 -Nl RTR -Nw --- -Ma 0 -Md a000000 -Ms ffff0008 -Mt 0 -Is 10.0 -Id -1.0 -It tcp -Il 1 -If 0 -Ii 2 -Iv 32 -Pn tcp -Ps 0 -Pa 0 -Pf 1 -Po 0 
+r -t 0.549303543 -Hs 6 -Hd -2 -Ni 6 -Nx 365.89 -Ny 426.62 -Nz 0.00 -Ne 9.991381 -Nl AGT -Nw --- -Ma 0 -Md a000000 -Ms ffff0008 -Mt 0 -Is 10.0 -Id -1.0 -It tcp -Il 1 -If 0 -Ii 2 -Iv 32 -Pn tcp -Ps 0 -Pa 0 -Pf 1 -Po 0 
+r -t 0.549303759 -Hs 5 -Hd -2 -Ni 5 -Nx 20.41 -Ny 479.79 -Nz 0.00 -Ne 9.991381 -Nl RTR -Nw --- -Ma 0 -Md a000000 -Ms ffff0008 -Mt 0 -Is 10.0 -Id -1.0 -It tcp -Il 1 -If 0 -Ii 2 -Iv 32 -Pn tcp -Ps 0 -Pa 0 -Pf 1 -Po 0 
+r -t 0.549303759 -Hs 5 -Hd -2 -Ni 5 -Nx 20.41 -Ny 479.79 -Nz 0.00 -Ne 9.991381 -Nl AGT -Nw --- -Ma 0 -Md a000000 -Ms ffff0008 -Mt 0 -Is 10.0 -Id -1.0 -It tcp -Il 1 -If 0 -Ii 2 -Iv 32 -Pn tcp -Ps 0 -Pa 0 -Pf 1 -Po 0 
+s -t 0.854062428 -Hs 6 -Hd -2 -Ni 6 -Nx 365.89 -Ny 426.62 -Nz 0.00 -Ne 9.986831 -Nl AGT -Nw --- -Ma 0 -Md 6000000 -Ms 0 -Mt 0 -Is 6.0 -Id -1.0 -It tcp -Il 1 -If 0 -Ii 3 -Iv 32 -Pn tcp -Ps 0 -Pa 0 -Pf 0 -Po 0 
+r -t 0.854062428 -Hs 6 -Hd -2 -Ni 6 -Nx 365.89 -Ny 426.62 -Nz 0.00 -Ne 9.986831 -Nl RTR -Nw --- -Ma 0 -Md 6000000 -Ms 0 -Mt 0 -Is 6.0 -Id -1.0 -It tcp -Il 1 -If 0 -Ii 3 -Iv 32 -Pn tcp -Ps 0 -Pa 0 -Pf 0 -Po 0 
+s -t 0.854062428 -Hs 6 -Hd -2 -Ni 6 -Nx 365.89 -Ny 426.62 -Nz 0.00 -Ne 9.986831 -Nl RTR -Nw --- -Ma 0 -Md 6000000 -Ms 0 -Mt 0 -Is 6.0 -Id -1.0 -It tcp -Il 1 -If 0 -Ii 3 -Iv 32 -Pn tcp -Ps 0 -Pa 0 -Pf 0 -Po 0 
+s -t 0.854087428 -Hs 6 -Hd -2 -Ni 6 -Nx 365.89 -Ny 426.62 -Nz 0.00 -Ne 9.986831 -Nl MAC -Nw --- -Ma 0 -Md 6000000 -Ms ffff0008 -Mt 0 -Is 6.0 -Id -1.0 -It tcp -Il 21 -If 0 -Ii 3 -Iv 32 -Pn tcp -Ps 0 -Pa 0 -Pf 0 -Po 0 
+N -t 0.854088 -n 8 -e 9.986786
+N -t 0.854088 -n 7 -e 9.986829
+N -t 0.854088 -n 4 -e 9.986829
+N -t 0.854089 -n 9 -e 9.986829
+N -t 0.854089 -n 5 -e 9.986829
+N -t 0.854089 -n 1 -e 9.986829
+N -t 0.854089 -n 10 -e 9.986786
+N -t 0.854089 -n 3 -e 9.986786
+N -t 0.854089 -n 0 -e 99.999832
+N -t 0.854089 -n 2 -e 9.986829
+r -t 0.854172077 -Hs 7 -Hd -2 -Ni 7 -Nx 275.15 -Ny 254.48 -Nz 0.00 -Ne 9.986829 -Nl MAC -Nw --- -Ma 0 -Md 6000000 -Ms ffff0008 -Mt 0 -Is 6.0 -Id -1.0 -It tcp -Il 1 -If 0 -Ii 3 -Iv 32 -Pn tcp -Ps 0 -Pa 0 -Pf 1 -Po 0 
+r -t 0.854172269 -Hs 4 -Hd -2 -Ni 4 -Nx 450.18 -Ny 189.01 -Nz 0.00 -Ne 9.986829 -Nl MAC -Nw --- -Ma 0 -Md 6000000 -Ms ffff0008 -Mt 0 -Is 6.0 -Id -1.0 -It tcp -Il 1 -If 0 -Ii 3 -Iv 32 -Pn tcp -Ps 0 -Pa 0 -Pf 1 -Po 0 
+r -t 0.854172514 -Hs 9 -Hd -2 -Ni 9 -Nx 282.10 -Ny 112.00 -Nz 0.00 -Ne 9.986829 -Nl MAC -Nw --- -Ma 0 -Md 6000000 -Ms ffff0008 -Mt 0 -Is 6.0 -Id -1.0 -It tcp -Il 1 -If 0 -Ii 3 -Iv 32 -Pn tcp -Ps 0 -Pa 0 -Pf 1 -Po 0 
+r -t 0.854172593 -Hs 5 -Hd -2 -Ni 5 -Nx 20.41 -Ny 479.79 -Nz 0.00 -Ne 9.986829 -Nl MAC -Nw --- -Ma 0 -Md 6000000 -Ms ffff0008 -Mt 0 -Is 6.0 -Id -1.0 -It tcp -Il 1 -If 0 -Ii 3 -Iv 32 -Pn tcp -Ps 0 -Pa 0 -Pf 1 -Po 0 
+r -t 0.854172704 -Hs 1 -Hd -2 -Ni 1 -Nx 490.02 -Ny 64.51 -Nz 0.00 -Ne 9.986829 -Nl MAC -Nw --- -Ma 0 -Md 6000000 -Ms ffff0008 -Mt 0 -Is 6.0 -Id -1.0 -It tcp -Il 1 -If 0 -Ii 3 -Iv 32 -Pn tcp -Ps 0 -Pa 0 -Pf 1 -Po 0 
+r -t 0.854173067 -Hs 0 -Hd -2 -Ni 0 -Nx 50.00 -Ny 50.00 -Nz 0.00 -Ne 99.999832 -Nl MAC -Nw --- -Ma 0 -Md 6000000 -Ms ffff0008 -Mt 0 -Is 6.0 -Id -1.0 -It tcp -Il 1 -If 0 -Ii 3 -Iv 32 -Pn tcp -Ps 0 -Pa 0 -Pf 1 -Po 0 
+r -t 0.854173073 -Hs 2 -Hd -2 -Ni 2 -Nx 37.96 -Ny 57.88 -Nz 0.00 -Ne 9.986829 -Nl MAC -Nw --- -Ma 0 -Md 6000000 -Ms ffff0008 -Mt 0 -Is 6.0 -Id -1.0 -It tcp -Il 1 -If 0 -Ii 3 -Iv 32 -Pn tcp -Ps 0 -Pa 0 -Pf 1 -Po 0 
+r -t 0.854197077 -Hs 7 -Hd -2 -Ni 7 -Nx 275.15 -Ny 254.48 -Nz 0.00 -Ne 9.986829 -Nl RTR -Nw --- -Ma 0 -Md 6000000 -Ms ffff0008 -Mt 0 -Is 6.0 -Id -1.0 -It tcp -Il 1 -If 0 -Ii 3 -Iv 32 -Pn tcp -Ps 0 -Pa 0 -Pf 1 -Po 0 
+r -t 0.854197077 -Hs 7 -Hd -2 -Ni 7 -Nx 275.15 -Ny 254.48 -Nz 0.00 -Ne 9.986829 -Nl AGT -Nw --- -Ma 0 -Md 6000000 -Ms ffff0008 -Mt 0 -Is 6.0 -Id -1.0 -It tcp -Il 1 -If 0 -Ii 3 -Iv 32 -Pn tcp -Ps 0 -Pa 0 -Pf 1 -Po 0 
+r -t 0.854197269 -Hs 4 -Hd -2 -Ni 4 -Nx 450.18 -Ny 189.01 -Nz 0.00 -Ne 9.986829 -Nl RTR -Nw --- -Ma 0 -Md 6000000 -Ms ffff0008 -Mt 0 -Is 6.0 -Id -1.0 -It tcp -Il 1 -If 0 -Ii 3 -Iv 32 -Pn tcp -Ps 0 -Pa 0 -Pf 1 -Po 0 
+r -t 0.854197269 -Hs 4 -Hd -2 -Ni 4 -Nx 450.18 -Ny 189.01 -Nz 0.00 -Ne 9.986829 -Nl AGT -Nw --- -Ma 0 -Md 6000000 -Ms ffff0008 -Mt 0 -Is 6.0 -Id -1.0 -It tcp -Il 1 -If 0 -Ii 3 -Iv 32 -Pn tcp -Ps 0 -Pa 0 -Pf 1 -Po 0 
+r -t 0.854197514 -Hs 9 -Hd -2 -Ni 9 -Nx 282.10 -Ny 112.00 -Nz 0.00 -Ne 9.986829 -Nl RTR -Nw --- -Ma 0 -Md 6000000 -Ms ffff0008 -Mt 0 -Is 6.0 -Id -1.0 -It tcp -Il 1 -If 0 -Ii 3 -Iv 32 -Pn tcp -Ps 0 -Pa 0 -Pf 1 -Po 0 
+r -t 0.854197514 -Hs 9 -Hd -2 -Ni 9 -Nx 282.10 -Ny 112.00 -Nz 0.00 -Ne 9.986829 -Nl AGT -Nw --- -Ma 0 -Md 6000000 -Ms ffff0008 -Mt 0 -Is 6.0 -Id -1.0 -It tcp -Il 1 -If 0 -Ii 3 -Iv 32 -Pn tcp -Ps 0 -Pa 0 -Pf 1 -Po 0 
+r -t 0.854197593 -Hs 5 -Hd -2 -Ni 5 -Nx 20.41 -Ny 479.79 -Nz 0.00 -Ne 9.986829 -Nl RTR -Nw --- -Ma 0 -Md 6000000 -Ms ffff0008 -Mt 0 -Is 6.0 -Id -1.0 -It tcp -Il 1 -If 0 -Ii 3 -Iv 32 -Pn tcp -Ps 0 -Pa 0 -Pf 1 -Po 0 
+r -t 0.854197593 -Hs 5 -Hd -2 -Ni 5 -Nx 20.41 -Ny 479.79 -Nz 0.00 -Ne 9.986829 -Nl AGT -Nw --- -Ma 0 -Md 6000000 -Ms ffff0008 -Mt 0 -Is 6.0 -Id -1.0 -It tcp -Il 1 -If 0 -Ii 3 -Iv 32 -Pn tcp -Ps 0 -Pa 0 -Pf 1 -Po 0 
+r -t 0.854197704 -Hs 1 -Hd -2 -Ni 1 -Nx 490.02 -Ny 64.51 -Nz 0.00 -Ne 9.986829 -Nl RTR -Nw --- -Ma 0 -Md 6000000 -Ms ffff0008 -Mt 0 -Is 6.0 -Id -1.0 -It tcp -Il 1 -If 0 -Ii 3 -Iv 32 -Pn tcp -Ps 0 -Pa 0 -Pf 1 -Po 0 
+r -t 0.854197704 -Hs 1 -Hd -2 -Ni 1 -Nx 490.02 -Ny 64.51 -Nz 0.00 -Ne 9.986829 -Nl AGT -Nw --- -Ma 0 -Md 6000000 -Ms ffff0008 -Mt 0 -Is 6.0 -Id -1.0 -It tcp -Il 1 -If 0 -Ii 3 -Iv 32 -Pn tcp -Ps 0 -Pa 0 -Pf 1 -Po 0 
+r -t 0.854198067 -Hs 0 -Hd -2 -Ni 0 -Nx 50.00 -Ny 50.00 -Nz 0.00 -Ne 99.999832 -Nl RTR -Nw --- -Ma 0 -Md 6000000 -Ms ffff0008 -Mt 0 -Is 6.0 -Id -1.0 -It tcp -Il 1 -If 0 -Ii 3 -Iv 32 -Pn tcp -Ps 0 -Pa 0 -Pf 1 -Po 0 
+r -t 0.854198067 -Hs 0 -Hd -2 -Ni 0 -Nx 50.00 -Ny 50.00 -Nz 0.00 -Ne 99.999832 -Nl AGT -Nw --- -Ma 0 -Md 6000000 -Ms ffff0008 -Mt 0 -Is 6.0 -Id -1.0 -It tcp -Il 1 -If 0 -Ii 3 -Iv 32 -Pn tcp -Ps 0 -Pa 0 -Pf 1 -Po 0 
+r -t 0.854198073 -Hs 2 -Hd -2 -Ni 2 -Nx 37.96 -Ny 57.88 -Nz 0.00 -Ne 9.986829 -Nl RTR -Nw --- -Ma 0 -Md 6000000 -Ms ffff0008 -Mt 0 -Is 6.0 -Id -1.0 -It tcp -Il 1 -If 0 -Ii 3 -Iv 32 -Pn tcp -Ps 0 -Pa 0 -Pf 1 -Po 0 
+r -t 0.854198073 -Hs 2 -Hd -2 -Ni 2 -Nx 37.96 -Ny 57.88 -Nz 0.00 -Ne 9.986829 -Nl AGT -Nw --- -Ma 0 -Md 6000000 -Ms ffff0008 -Mt 0 -Is 6.0 -Id -1.0 -It tcp -Il 1 -If 0 -Ii 3 -Iv 32 -Pn tcp -Ps 0 -Pa 0 -Pf 1 -Po 0 
+s -t 2.099585036 -Hs 7 -Hd -2 -Ni 7 -Nx 275.15 -Ny 254.48 -Nz 0.00 -Ne 9.966842 -Nl AGT -Nw --- -Ma 0 -Md 7000000 -Ms 0 -Mt 0 -Is 7.0 -Id -1.0 -It udp -Il 7 -If 0 -Ii 4 -Iv 32 
+r -t 2.099585036 -Hs 7 -Hd -2 -Ni 7 -Nx 275.15 -Ny 254.48 -Nz 0.00 -Ne 9.966842 -Nl RTR -Nw --- -Ma 0 -Md 7000000 -Ms 0 -Mt 0 -Is 7.0 -Id -1.0 -It udp -Il 7 -If 0 -Ii 4 -Iv 32 
+s -t 2.099585036 -Hs 7 -Hd -2 -Ni 7 -Nx 275.15 -Ny 254.48 -Nz 0.00 -Ne 9.966842 -Nl RTR -Nw --- -Ma 0 -Md 7000000 -Ms 0 -Mt 0 -Is 7.0 -Id -1.0 -It udp -Il 7 -If 0 -Ii 4 -Iv 32 
+s -t 2.099610036 -Hs 7 -Hd -2 -Ni 7 -Nx 275.15 -Ny 254.48 -Nz 0.00 -Ne 9.966842 -Nl MAC -Nw --- -Ma 0 -Md 7000000 -Ms 8 -Mt 0 -Is 7.0 -Id -1.0 -It udp -Il 27 -If 0 -Ii 4 -Iv 32 
+s -t 2.691285807 -Hs 4 -Hd -2 -Ni 4 -Nx 450.18 -Ny 189.01 -Nz 0.00 -Ne 9.957254 -Nl AGT -Nw --- -Ma 0 -Md 4000000 -Ms 0 -Mt 0 -Is 4.0 -Id -1.0 -It udp -Il 4 -If 0 -Ii 5 -Iv 32 
+r -t 2.691285807 -Hs 4 -Hd -2 -Ni 4 -Nx 450.18 -Ny 189.01 -Nz 0.00 -Ne 9.957254 -Nl RTR -Nw --- -Ma 0 -Md 4000000 -Ms 0 -Mt 0 -Is 4.0 -Id -1.0 -It udp -Il 4 -If 0 -Ii 5 -Iv 32 
+s -t 2.691285807 -Hs 4 -Hd -2 -Ni 4 -Nx 450.18 -Ny 189.01 -Nz 0.00 -Ne 9.957254 -Nl RTR -Nw --- -Ma 0 -Md 4000000 -Ms 0 -Mt 0 -Is 4.0 -Id -1.0 -It udp -Il 4 -If 0 -Ii 5 -Iv 32 
+s -t 2.691310807 -Hs 4 -Hd -2 -Ni 4 -Nx 450.18 -Ny 189.01 -Nz 0.00 -Ne 9.957254 -Nl MAC -Nw --- -Ma 0 -Md 4000000 -Ms 8 -Mt 0 -Is 4.0 -Id -1.0 -It udp -Il 24 -If 0 -Ii 5 -Iv 32 
+s -t 2.704752637 -Hs 5 -Hd -2 -Ni 5 -Nx 20.41 -Ny 479.79 -Nz 0.00 -Ne 9.956929 -Nl AGT -Nw --- -Ma 0 -Md 5000000 -Ms 0 -Mt 0 -Is 5.0 -Id -1.0 -It udp -Il 5 -If 0 -Ii 6 -Iv 32 
+r -t 2.704752637 -Hs 5 -Hd -2 -Ni 5 -Nx 20.41 -Ny 479.79 -Nz 0.00 -Ne 9.956929 -Nl RTR -Nw --- -Ma 0 -Md 5000000 -Ms 0 -Mt 0 -Is 5.0 -Id -1.0 -It udp -Il 5 -If 0 -Ii 6 -Iv 32 
+s -t 2.704752637 -Hs 5 -Hd -2 -Ni 5 -Nx 20.41 -Ny 479.79 -Nz 0.00 -Ne 9.956929 -Nl RTR -Nw --- -Ma 0 -Md 5000000 -Ms 0 -Mt 0 -Is 5.0 -Id -1.0 -It udp -Il 5 -If 0 -Ii 6 -Iv 32 
+s -t 2.704777637 -Hs 5 -Hd -2 -Ni 5 -Nx 20.41 -Ny 479.79 -Nz 0.00 -Ne 9.956929 -Nl MAC -Nw --- -

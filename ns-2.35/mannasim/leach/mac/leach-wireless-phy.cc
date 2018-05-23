@@ -23,7 +23,7 @@ LeachWirelessPhy::LeachWirelessPhy()
         bandwidth_ = 1000000;                // 100 Mbps
         Efriss_amp_ = 100 * 1e-12;           // Friss amp energy (J/bit/m^2)
         Etwo_ray_amp_ = 0.013 * 1e-12;       // Two-ray amp energy (J/bit/m^4)
-        EXcvr_ = 50 * 1e-9;                  // Xcvr energy (J/bit)	
+        EXcvr_ = 50 * 1e-9;                  // Xcvr energy (J/bit)
         // Use this base threshold to get a "hearing radius" of ~ 1 m
 	//         //   Pfriss_amp_ = Efriss_amp_ * bandwidth_;      // Friss power (W/m^2)
         Ptwo_ray_amp_ = Etwo_ray_amp_ * bandwidth_;  // Two-ray power (W/m^4)
@@ -62,7 +62,7 @@ int LeachWirelessPhy::sendUp(Packet *p)
 	pk_recvd = WirelessPhy::sendUp(p);
 
 	if (pk_recvd)
-	{	
+	{
 		/*
 		** Determine approximate distance of node transmitting node
 		** from received power.
@@ -170,4 +170,3 @@ double LeachWirelessPhy::pktEnergy(double pt, double pxcvr, int nbytes)
 
 	return j;
 }
-

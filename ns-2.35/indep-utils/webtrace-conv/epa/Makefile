@@ -46,11 +46,11 @@ prefix  = /usr/local
 # Pathname of directory to install the binary
 BINDEST = /usr/local/bin
 
-CC = g++-5
+CC = g++
 MKDEP	= ../../../conf/mkdep
 
 INCLUDE = -I. -I/home/lexi/Documents/Thesis/ns-allinone-2.35/tclcl-1.20 -I/home/lexi/Documents/Thesis/ns-allinone-2.35/otcl-1.14 -I/home/lexi/Documents/Thesis/ns-allinone-2.35/include -I/home/lexi/Documents/Thesis/ns-allinone-2.35/include -I/home/lexi/Documents/Thesis/ns-allinone-2.35/include -I/usr/include/pcap
-CFLAGS =  -DCPP_NAMESPACE=std
+CFLAGS =  -Wall -Wno-write-strings -DCPP_NAMESPACE=std
 LDFLAGS = 
 LIBS = -L/home/lexi/Documents/Thesis/ns-allinone-2.35/lib -ltcl8.5  -lnsl -ldl -lm 
 INSTALL = /usr/bin/install -c

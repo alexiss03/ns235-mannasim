@@ -43,9 +43,9 @@ MANDEST = ${datarootdir}/man
 # Define datarootdir as of autoconf 2.60
 datarootdir = ${prefix}/share
 
-CC = gcc-5
-CPP = g++-5
-CCOPT = 
+CC = gcc
+CPP = g++
+CCOPT =  -Wall -Wno-write-strings
 MKDEP = ./conf/mkdep
 # Have to be the same as that defined in conf/makefile.win
 TCL2C = ../tclcl-1.20/tcl2c++

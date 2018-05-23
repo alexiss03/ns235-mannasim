@@ -37,8 +37,8 @@
 BLANK	= # make a blank space.  DO NOT add anything to this line
 
 # The following will be redefined under Windows (see WIN32 lable below)
-CC	= gcc-5
-CPP	= g++-5
+CC	= gcc
+CPP	= g++
 LINK	= $(CPP)
 MKDEP	= ./conf/mkdep
 TCLSH	= /home/lexi/Documents/Thesis/ns-allinone-2.35/bin/tclsh8.5
@@ -53,7 +53,7 @@ RM	= rm -f
 PERL	= perl
 
 
-CCOPT	= 
+CCOPT	=  -Wall -Wno-write-strings -Wno-parentheses
 STATIC	= 
 LDFLAGS	= $(STATIC)
 LDOUT	= -o $(BLANK)

@@ -229,8 +229,8 @@ DLTEST_DIR		= /home/lexi/Documents/Thesis/ns-allinone-2.35/tcl8.5.10/unix/dltest
 # Must be absolute to so the corresponding tcltest's tcl_library is absolute.
 TCL_BUILDTIME_LIBRARY	= /home/lexi/Documents/Thesis/ns-allinone-2.35/tcl8.5.10/library
 
-CC			= gcc-5
-#CC			= purify -best-effort gcc-5 -DPURIFY
+CC			= gcc
+#CC			= purify -best-effort gcc -DPURIFY
 
 # Flags to be passed to installManPage to control how the manpages should be
 # installed (symlinks, compression, package name suffix).

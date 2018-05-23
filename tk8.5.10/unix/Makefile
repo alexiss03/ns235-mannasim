@@ -320,7 +320,7 @@ XLIB_DIR		= $(TOP_DIR)/xlib
 # should be installed (symlinks, compression, package name suffix).
 MAN_FLAGS               = 
 
-CC			= gcc-5
+CC			= gcc
 
 CC_SWITCHES_NO_STUBS = ${CFLAGS} ${CFLAGS_WARNING} ${SHLIB_CFLAGS} \
 -I${UNIX_DIR} -I${GENERIC_DIR} -I${BMAP_DIR} -I${TCL_GENERIC_DIR} \
