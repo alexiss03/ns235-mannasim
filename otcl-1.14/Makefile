@@ -4,7 +4,7 @@
 # to your system, but you always can edit the sections below manually.
 #
 
-CC=		gcc-5
+CC=		gcc
 CFLAGS=		-g -O2
 RANLIB= 	ranlib
 INSTALL=	/usr/bin/install -c
@@ -13,7 +13,7 @@ INSTALL=	/usr/bin/install -c
 # how to compile, link, and name shared libraries
 #
 
-SHLIB_LD=	gcc-5 -shared
+SHLIB_LD=	gcc -shared
 SHLIB_CFLAGS=	-fPIC
 SHLIB_SUFFIX=	.so
 SHLD_FLAGS=	-rdynamic
