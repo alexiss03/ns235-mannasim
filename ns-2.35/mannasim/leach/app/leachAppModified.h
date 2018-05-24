@@ -24,6 +24,7 @@ has a higher energy level
 */
 #define LEACH_CHALLENGE_NODE    5
 #define LEACH_ACCEPT_CHALLENGE   6
+#define LEACH_RESIGN_CH   7
 
 #define BYTES_ID	 sizeof(int)
 
@@ -42,7 +43,7 @@ class LeachAppWithResignation : public CommonNodeApp //SensorBaseApp
 		class LeachEvent : public Event
 		{
 			public:
-				typedef void (LeachApp::*delegation) (void);
+				typedef void (LeachAppWithResignation::*delegation) (void);
 
 			private:
 				delegation delegate_;
@@ -56,7 +57,7 @@ class LeachAppWithResignation : public CommonNodeApp //SensorBaseApp
 				delegation getDelegate() { return delegate_; }
 				void setDelegate(delegation delegate) { delegate_ = delegate; }
 
-				inline void executeDelegation(LeachApp * app)
+				inline void executeDelegation(LeachAppWithResignation * app)
 				{
 					(app->*delegate_)();
 				}
@@ -65,9 +66,9 @@ class LeachAppWithResignation : public CommonNodeApp //SensorBaseApp
 		class LeachEventHandler : public Handler
 		{
 			private:
-				LeachApp * app_;
+				LeachAppWithResignation * app_;
 			public:
-				LeachEventHandler(LeachApp * app) { app_ = app; }
+				LeachEventHandler(LeachAppWithResignation * app) { app_ = app; }
 
 				void handle(Event * event)
 				{
@@ -149,8 +150,8 @@ class LeachAppWithResignation : public CommonNodeApp //SensorBaseApp
 		bool        listenJOINREQ_;		// If it's listenning to JOIN_REQ
 
 	public:
-		LeachApp(int nNodes, int nClusters, double maxDist);
-		~LeachApp();
+		LeachAppWithResignation(int nNodes, int nClusters, double maxDist);
+		~LeachAppWithResignation();
 
 		void start();
 
@@ -167,6 +168,15 @@ class LeachAppWithResignation : public CommonNodeApp //SensorBaseApp
 
 		virtual void findBestCluster();
 		virtual void informClusterHead();
+
+		// Modified by Mary Alexis Solis
+		void resignClusterHead();
+		void challegeNodeAsNewClusterHead();
+		void acceptChallengeAsClusterHead(chadv element);
+
+		void recvChallengeNode(char * msg, int size, double distance, int src, int lnk_src);
+		void recvClusterHeadResignNode(char * msg, int size, double distance, int src, int lnk_src);
+
 		virtual void createSchedule();
 		virtual void advertiseClusterHead();
 
