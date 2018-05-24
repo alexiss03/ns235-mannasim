@@ -687,7 +687,7 @@ struct hdr_cmn {
 // MIT_uAMPS
 struct hdr_rca {
        int msg_type_;
-       char meta_[1000];
+       char meta_[4064];
        int meta_size_;
        float dist_to_dest_;
        int dist_est_;
