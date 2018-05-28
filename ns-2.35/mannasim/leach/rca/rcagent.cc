@@ -5,6 +5,7 @@
  *************************************************************************/
 
 #include "mannasim/leach/app/leachApp.h"
+#include "mannasim/commonNodeApp.h"
 
 #include "object.h"
 #include "agent.h"
@@ -49,7 +50,7 @@ RCAgent::~RCAgent()
     int
 RCAgent::command(int argc, const char*const* argv)
 {
-    TclObject *obj;  
+    TclObject *obj;
     Tcl& tcl = Tcl::instance();
 
     if (argc == 3) {
@@ -78,13 +79,13 @@ RCAgent::command(int argc, const char*const* argv)
             mac = (Mac*) obj;
             return TCL_OK;
         }
-    } 
+    }
 
     if (strcmp(argv[1], "sendmsg") == 0) {
         if (argc < 6) {
             fprintf(stderr, "RCAgent: %s needs argc >= 6\n", argv[1]);
             return TCL_ERROR;
-        } 
+        }
         int mac_dst;
         if (Tcl_GetInt(tcl.interp(),(char *)argv[4], &mac_dst) != TCL_OK) {
             fprintf(stderr, "RCAgent: could not convert %s to int\n", argv[4]);
@@ -136,7 +137,7 @@ void RCAgent::sendmsg(int data_size, const char* meta_data, int destination, int
     sendmsg(data_size, meta_data, strlen(meta_data), destination, sendto, dist_to_dest, code, packetMsg);
 }
 
-void RCAgent::sendmsg(int data_size, const char* meta_data, int meta_size, int mac_dst, int link_dst, double dist_to_dest, int code, int packetMsg) 
+void RCAgent::sendmsg(int data_size, const char* meta_data, int meta_size, int mac_dst, int link_dst, double dist_to_dest, int code, int packetMsg)
 {
 
     dst_.port_ = 0;
@@ -153,7 +154,7 @@ void RCAgent::sendmsg(int data_size, const char* meta_data, int meta_size, int m
     rca_hdr->rca_mac_dst() = mac_dst;
     rca_hdr->rca_link_dst() = link_dst;
     rca_hdr->rca_mac_src() = mac->addr();
-    rca_hdr->rca_link_src() = ((LeachApp *) app_)->sensor_node()->nodeid();
+    rca_hdr->rca_link_src() = ((CommonNodeApp *) app_)->sensor_node()->nodeid();
     rca_hdr->get_dist() = dist_to_dest;
     rca_hdr->get_code() = code;
 
@@ -166,7 +167,7 @@ void RCAgent::sendmsg(int data_size, const char* meta_data, int meta_size, int m
 
     //Packet::PrintRcHeader(p,"RCAgent");
 
-    //  Scheduler::instance().schedule(ll, p, 0); 
+    //  Scheduler::instance().schedule(ll, p, 0);
     target_->recv(p);
 
     return;
@@ -177,7 +178,7 @@ void RCAgent::recv(Packet* p, Handler*)
     hdr_cmn *hdr = HDR_CMN(p);
     hdr_rca *rca_hdr = HDR_RCA(p);
 
-    if (app_ && (rca_hdr->rca_link_dst() < 0 || rca_hdr->rca_link_dst() == ((LeachApp *) app_)->sensor_node()->nodeid()))
+    if (app_ && (rca_hdr->rca_link_dst() < 0 || rca_hdr->rca_link_dst() == ((CommonNodeApp *) app_)->sensor_node()->nodeid()))
     {
         //  printf("Receiving: Link_dst = %x, Type=%d data_size=%d\n\tMeta = %s, source = %d\n",rca_hdr->rca_link_dst(),rca_hdr->msg_type(), hdr->size(), rca_hdr->meta(),rca_hdr->rca_src());
         //  fflush(stdout);
@@ -185,8 +186,10 @@ void RCAgent::recv(Packet* p, Handler*)
         packetMsg_ = rca_hdr->msg_type();
         distEst_ = rca_hdr->dist_est();
 
-        ((LeachApp *) app_)->recv(packetMsg_, distEst_, rca_hdr->rca_link_dst(), hdr->size(), rca_hdr->meta(),
+        ((CommonNodeApp *) app_)->recv(packetMsg_, distEst_, rca_hdr->rca_link_dst(), hdr->size(), rca_hdr->meta(),
                                   rca_hdr->meta_size(), rca_hdr->rca_mac_src(), rca_hdr->rca_link_src());
+    } else {
+      printf("Packet not sent\n");
     }
     //  else
     //    printf("Pacote descartado por %d\n", ((LeachApp *) app_)->sensor_node()->nodeid());
@@ -210,4 +213,3 @@ void RCAgent::log(const char *msg)
             msg);
     log_target->pt_->dump();
 }
-

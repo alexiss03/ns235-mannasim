@@ -9,7 +9,7 @@ static class LeachAppClass : public TclClass
 {
         public:
                 LeachAppClass() : TclClass("Application/SensorBaseApp/CommonNodeApp/LeachApp") {}
- 
+
                 // Create a TCL Object (parameters starts in 4)
                 TclObject * create(int argc, const char * const * argv)
                 {
@@ -26,7 +26,7 @@ static class LeachAppClass : public TclClass
 				atof(argv[6]));
                 }
 } leach_app_object;
- 
+
 
 
 
@@ -76,12 +76,12 @@ void LeachApp::initializeConfig()
 	#define HDR_SIZE 25		// Originalmente era 25
 
 	config_.changeTimeIncrement_ = 10 * INITIAL_ENERGY;
-	config_.rndAdvDelay_         = TxTime(HDR_SIZE + 4); 
+	config_.rndAdvDelay_         = TxTime(HDR_SIZE + 4);
 	config_.ra_advTotal_         = 1 + config_.rndAdvDelay_ * (config_.desiredClusters_ * 4 + 1);
 	config_.ra_join_             = 0.01 * config_.numberNodes_;
 	config_.ra_delay_            = TxTime(HDR_SIZE + 4);
 	config_.spreading_           = config_.desiredClusters_ + 1;
-	config_.sigSize_             = 500; 
+	config_.sigSize_             = 500;
 	config_.ssSlotTime_          = TxTime(config_.sigSize_ + HDR_SIZE) * config_.spreading_;
 	config_.bsCode_              = 0;
 
@@ -171,7 +171,7 @@ void LeachApp::decideClusterHead()
 	totRounds = config_.numberNodes_ / config_.desiredClusters_;
 
 	if (round_ >= totRounds)
-		round_ = 0;	
+		round_ = 0;
 
 	if (round_ == 0)
 		setHasNotBeenClusterHead();
@@ -185,7 +185,7 @@ void LeachApp::decideClusterHead()
 		Scheduler::instance().schedule(
 			eventHandler_,
 			new LeachEvent(&LeachApp::advertiseClusterHead),
-			config_.rndAdvDelay_);
+			Scheduler::instance().clock() + config_.rndAdvDelay_);
 	}
 	else
 	{
@@ -201,12 +201,12 @@ void LeachApp::decideClusterHead()
 		eventHandler_,
 		new LeachEvent(&LeachApp::decideClusterHead),
 //		nextChangeTime_);
-		config_.changeTimeIncrement_);
+		Scheduler::instance().clock() + config_.changeTimeIncrement_);
 
 	Scheduler::instance().schedule(
 		eventHandler_,
 		new LeachEvent(&LeachApp::findBestCluster),
-		config_.ra_advTotal_);
+		Scheduler::instance().clock() + config_.ra_advTotal_);
 }
 
 double LeachApp::calculatePi()
@@ -240,7 +240,7 @@ void LeachApp::advertiseClusterHead()
 
 	numCodesAvail = 2 * config_.spreading_ - 1;
 
-	
+
 	currentCH_ = sensor_node_->nodeid();
 	currentCHMAC_ = MAC_BROADCAST;
 
@@ -289,7 +289,7 @@ void LeachApp::findBestCluster()
 		Scheduler::instance().schedule(
 			eventHandler_,
 			new LeachEvent(&LeachApp::createSchedule),
-			config_.ra_advTotal_ + config_.ra_join_);
+			Scheduler::instance().clock() + config_.ra_advTotal_ + config_.ra_join_);
 	}
 	else
 	{
@@ -332,13 +332,13 @@ void LeachApp::findBestCluster()
 		Scheduler::instance().schedule(
 			eventHandler_,
 			new LeachEvent(&LeachApp::informClusterHead),
-			config_.ra_advTotal_ + Random::uniform(0, config_.ra_join_ - config_.ra_delay_));;
+			Scheduler::instance().clock() + config_.ra_advTotal_ + Random::uniform(0, config_.ra_join_ - config_.ra_delay_));;
 
 		goToSleep();
-	
+
 
 		setCode(clusterCode);
-		
+
 		printf("Current cluster-head of %d is %d, which code is %d, at distance is %lf\n",
 			sensor_node_->nodeid(),
 			currentCH_,
@@ -429,7 +429,7 @@ void LeachApp::createSchedule()
 		Scheduler::instance().schedule(
 			eventHandler_,
 			new LeachEvent(&LeachApp::sendDataToBS),
-			xmitTime_);
+			Scheduler::instance().clock() + xmitTime_);
 	}
 }
 
@@ -485,7 +485,7 @@ void LeachApp::recv(int type, double distance, int link_dst, int size, char * me
 
 			default:
 				fprintf(stderr, "Unknown received data type on LeachApp!\n", type);
-				exit(-1);
+				//exit(-1);
 		}
 //	else
 //		fprintf(stderr, "Received a packet addressed to another node!\n");
@@ -523,7 +523,8 @@ void LeachApp::recvJOIN_REQ(char * msg, int size)
 		fprintf(stderr, "Node %d received a JOIN_REQ from %d but it's not a cluster head!\n",
 			sensor_node_->nodeid(),
 			*((int *) msg));
-		exit(-1);
+    return;
+		//exit(-1);
 	}
 
 	if (listenJOINREQ_)
@@ -566,19 +567,19 @@ void LeachApp::recvADV_SCH(char * msg, int size, int src)
 				xmitTime_   = config_.ssSlotTime_ * i;
 				endFrmTime_ = frameTime_ - xmitTime_;
 				xmitat      = Scheduler::instance().clock() + xmitTime_;
-	
+
 				printf("Node %d schedule to transmit at %lf (%lf) | It is now %lf\n",
 					nodeid,
 					xmitat,
 					xmitTime_,
 					Scheduler::instance().clock());
-	
+
 				if (xmitat + endFrmTime_ < nextChangeTime_ - 10 * config_.ssSlotTime_)
 				{
 					Scheduler::instance().schedule(
 						eventHandler_,
 						new LeachEvent(&LeachApp::sendData),
-						xmitTime_);
+						Scheduler::instance().clock() + xmitTime_);
 
 					goToSleep();
 				}
@@ -589,7 +590,7 @@ void LeachApp::recvADV_SCH(char * msg, int size, int src)
 
 		// There is no time slot available
 		printf("Warning!!! %d doesn't have a transmit time for CH %d!\n", sensor_node_->nodeid(), currentCH_);
-	
+
 		sendMyDataToBS();
 	}
 }
@@ -666,7 +667,7 @@ void LeachApp::sendData()
 		Scheduler::instance().schedule(
 			eventHandler_,
 			new LeachEvent(&LeachApp::sendData),
-			frameTime_);
+			Scheduler::instance().clock()+frameTime_);
 }
 
 void LeachApp::send(int mac_dst, int link_dst, int type, char * msg, int msg_size, int data_size, double dist, int code)
@@ -754,12 +755,12 @@ void LeachApp::sendDataToBS()
 
 		clearSensedData();
 	}
-	
+
 	if (xmitat + endFrmTime_ < nextChangeTime_ - 10 * config_.ssSlotTime_)
 		Scheduler::instance().schedule(
 			eventHandler_,
 			new LeachEvent(&LeachApp::sendDataToBS),
-			xmitat);
+			Scheduler::instance().clock()+xmitat);
 }
 
 void LeachApp::sendMyDataToBS()
@@ -768,7 +769,7 @@ void LeachApp::sendMyDataToBS()
 }
 
 void LeachApp::disseminateData(SensedData * data)
-{                                                                                                                            
+{
 	if (data != NULL)
 	{
 		printf("Common Node %d - Disseminating data -  Time %.3lf\n",
@@ -798,11 +799,11 @@ void LeachApp::clearClusterChoices()
 	for (CHs::iterator it = clusterChoices_.begin(); it != clusterChoices_.end(); it++)
 	{
 		chadv element = (chadv) *it;
-		
+
 		if (element.object != NULL)
 			delete element.object;
 	}
-	
+
 	clusterChoices_.clear();
 }
 
@@ -810,4 +811,3 @@ void LeachApp::clearSensedData()
 {
 	sensedData_->clear();
 }
-
