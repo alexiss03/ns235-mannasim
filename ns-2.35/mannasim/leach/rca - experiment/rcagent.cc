@@ -5,6 +5,7 @@
  *************************************************************************/
 
 #include "mannasim/leach/app/leachApp.h"
+#include "mannasim/commonNodeApp.h"
 #include "mannasim/leach/app/leachAppModified.h"
 
 #include "object.h"
@@ -151,7 +152,7 @@ void RCAgent::sendmsg(int data_size, const char* meta_data, int meta_size, int m
     rca_hdr->rca_mac_dst() = mac_dst;
     rca_hdr->rca_link_dst() = link_dst;
     rca_hdr->rca_mac_src() = mac->addr();
-    rca_hdr->rca_link_src() = ((LeachApp *) app_)->sensor_node()->nodeid();
+    rca_hdr->rca_link_src() = ((CommonNodeApp *) app_)->sensor_node()->nodeid();
     rca_hdr->get_dist() = dist_to_dest;
     rca_hdr->get_code() = code;
 
@@ -175,7 +176,7 @@ void RCAgent::recv(Packet* p, Handler*)
     hdr_cmn *hdr = HDR_CMN(p);
     hdr_rca *rca_hdr = HDR_RCA(p);
 
-    if (app_ && (rca_hdr->rca_link_dst() < 0 || rca_hdr->rca_link_dst() == ((LeachApp *) app_)->sensor_node()->nodeid()))
+    if (app_ && (rca_hdr->rca_link_dst() < 0 || rca_hdr->rca_link_dst() == ((CommonNodeApp *) app_)->sensor_node()->nodeid()))
     {
         //  printf("Receiving: Link_dst = %x, Type=%d data_size=%d\n\tMeta = %s, source = %d\n",rca_hdr->rca_link_dst(),rca_hdr->msg_type(), hdr->size(), rca_hdr->meta(),rca_hdr->rca_src());
         //  fflush(stdout);
@@ -183,7 +184,7 @@ void RCAgent::recv(Packet* p, Handler*)
         packetMsg_ = rca_hdr->msg_type();
         distEst_ = rca_hdr->dist_est();
 
-        ((LeachApp *) app_)->recv(packetMsg_, distEst_, rca_hdr->rca_link_dst(), hdr->size(), rca_hdr->meta(),
+        ((CommonNodeApp *) app_)->recv(packetMsg_, distEst_, rca_hdr->rca_link_dst(), hdr->size(), rca_hdr->meta(),
                                   rca_hdr->meta_size(), rca_hdr->rca_mac_src(), rca_hdr->rca_link_src());
     }
     //  else

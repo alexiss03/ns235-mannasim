@@ -1,11 +1,11 @@
-///  
+///
 /// Copyright (C) 2003-2005 Federal University of Minas Gerais
-/// 
+///
 /// This program is free software; you can redistribute it and/or
 /// modify it under the terms of the GNU General Public License
 /// as published by the Free Software Foundation; either version 2
 /// of the License, or (at your option) any later version.
-/// 
+///
 /// This program is distributed in the hope that it will be useful,
 /// but WITHOUT ANY WARRANTY; without even the implied warranty of
 /// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
@@ -13,17 +13,17 @@
 ///
 /// You should have received a copy of the GNU General Public License
 /// along with this program; if not, write to the Free Software
-/// Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, 
+/// Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
 /// MA 02110-1301, USA.
-/// 
+///
 /// Implementation of the classes used by all common sensor nodes of a Wireless
-/// Sensor Network. These classes represents the sensing dynamics: sensing, 
+/// Sensor Network. These classes represents the sensing dynamics: sensing,
 /// processing, and disseminating.
 ///
 /// --
 /// The Manna Reseach Group
 /// e-mail: mannateam@gmail.com
-/// 
+///
 #include "sensorBaseApp.h"
 
 
@@ -33,7 +33,7 @@ void DisseminatingTimer::expire(Event*)
 {
 	double dissT;
 	app_->disseminateData();
-	
+
 	dissT = app_->getExpireTime();
 	if (dissT != -1)
 	{
@@ -49,20 +49,20 @@ SensorBaseApp::SensorBaseApp():Application()
 	bind("disseminating_type_",&disseminating_type_);
 	bind("disseminating_interval_",&disseminating_interval_);
 	bind("destination_id_",&destination_id_);
-	
+
 	dissTimer_ = new DisseminatingTimer(this);
 }
 
-/// NS-2 command function overloaded. Deals with TCL script commands to C++ 
+/// NS-2 command function overloaded. Deals with TCL script commands to C++
 /// implementation.
 int SensorBaseApp::command(int argc, const char*const* argv)
 {
 	if(argc == 2)
-	{		
+	{
 		if(strcmp(argv[1],"start") == 0)
 		{
 			/// Initiates the sensing, processing and disseminating activity
-			SensorBaseApp::start();	
+			SensorBaseApp::start();
 			return TCL_OK;
 		}
 		if(strcmp(argv[1],"stop") == 0)
@@ -126,20 +126,20 @@ double SensorBaseApp::getExpireTime(){
 			return -1;
 		case EVENT_DRIVEN:
 			return -1;
-		default: 
+		default:
 			fprintf(stderr, "Unrecognized type of dissemination!\n");
 			abort();
 			break;
 	}
 }
 
-/// Shedule the first processing/disseminating event if these activity type 
+/// Shedule the first processing/disseminating event if these activity type
 /// isn�t the continuous one.
 void SensorBaseApp::start()
-{	
+{
 	double dissT;
 	dissT = getExpireTime();
-	
+
 	if (dissT != -1)
 	{
 		dissTimer_->resched(dissT);
@@ -148,7 +148,7 @@ void SensorBaseApp::start()
 	DataGenList::iterator it;
 	DataGenerator* gen;
 	for(it = gen_.begin(); it != gen_.end(); it++)
-	{	
+	{
 		gen = *it;
 		gen->start();
 	}
@@ -156,7 +156,7 @@ void SensorBaseApp::start()
 
 /// Drops all the scheduled events.
 void SensorBaseApp::stop()
-{	
+{
 	if (dissTimer_->status() == TIMER_PENDING)
 	{
 		dissTimer_->cancel();
@@ -172,6 +172,7 @@ void SensorBaseApp::stop()
 	}
 }
 
+
 /// Inserts a new DataGenerator to application DataGenerator list.
 void SensorBaseApp::insertNewGenerator(DataGenerator* gen)
 {
@@ -186,6 +187,6 @@ DataGenList SensorBaseApp::getGenList()
 
 /// Return the sensor node attached to the application.
 SensorNode * SensorBaseApp::sensor_node()
-{ 
+{
 	return sensor_node_;
 }

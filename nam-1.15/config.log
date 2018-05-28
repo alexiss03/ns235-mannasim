@@ -27,7 +27,7 @@ uname -v = #21-Ubuntu SMP Tue Apr 24 06:16:15 UTC 2018
 /usr/bin/oslevel       = unknown
 /bin/universe          = unknown
 
-PATH: /home/lexi/Documents/Thesis/ns-allinone-2.35/bin
+PATH: /home/lexi/Documents/Thesis/ns-allinone-2.35/ns-2.35/bin
 PATH: /usr/local/sbin
 PATH: /usr/local/bin
 PATH: /usr/sbin

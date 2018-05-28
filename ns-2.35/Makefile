@@ -161,8 +161,7 @@ NS_TCL_LIB_STL = tcl/lib/ns-diffusion.tcl \
 # WIN32: uncomment the following line to include specific make for VC++
 # !include <conf/makefile.win>
 
-OBJ_CC = \
-	tools/random.o tools/rng.o tools/ranvar.o common/misc.o common/timer-handler.o \
+OBJ_CC = tools/random.o tools/rng.o tools/ranvar.o common/misc.o common/timer-handler.o \
 	common/scheduler.o common/object.o common/packet.o \
 	common/ip.o routing/route.o common/connector.o common/ttl.o \
 	trace/trace.o trace/trace-ip.o \
@@ -623,7 +622,7 @@ tcl/lib/TAGS:	force
 	)
 
 depend: $(SRC)
-	$(MKDEP) $(CFLAGS) $(INCLUDES) $(SRC) 2>&1 > /dev/null
+	#$(MKDEP) $(CFLAGS) $(INCLUDES) $(SRC) 2>&1 > /dev/null
 
 srctar:
 	@cwd=`pwd` ; dir=`basename $$cwd` ; \

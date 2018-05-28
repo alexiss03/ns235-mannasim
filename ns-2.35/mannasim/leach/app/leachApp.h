@@ -29,6 +29,7 @@
 
 class LeachApp : public CommonNodeApp //SensorBaseApp
 {
+
 	protected:
 		class LeachEvent : public Event
 		{
@@ -97,7 +98,7 @@ class LeachApp : public CommonNodeApp //SensorBaseApp
 	protected:
 		MacSensor * mac_;
 		double      nextChangeTime_;
-	
+
 	private:
 		bool        isCH_;	        // Is cluster-head?
 		bool        hasBeenCH_;      // Has been cluster-head?
@@ -138,7 +139,7 @@ class LeachApp : public CommonNodeApp //SensorBaseApp
 		int         currentCHMAC_;
 		bool        listenADV_;			// If it's listenning to ADV
 		bool        listenJOINREQ_;		// If it's listenning to JOIN_REQ
-		
+
 	public:
 		LeachApp(int nNodes, int nClusters, double maxDist);
 		~LeachApp();
@@ -156,23 +157,23 @@ class LeachApp : public CommonNodeApp //SensorBaseApp
 		void setClusterHead();
 		void unsetClusterHead();
 
-		virtual void findBestCluster();
-		virtual void informClusterHead();
-		virtual void createSchedule();
-		virtual void advertiseClusterHead();
+		void findBestCluster();
+		void informClusterHead();
+		void createSchedule();
+		void advertiseClusterHead();
 
 		void recv(int type, double distance, int link_dst, int size, char * meta, int meta_size, int src_mac, int src_lnk);
-		virtual void sendData();
-		virtual void sendDataToBS();
+		void sendData();
+		void sendDataToBS();
 		void sendMyDataToBS();
 
 	protected:
-		virtual void decideClusterHead();
+		void decideClusterHead();
 
 		// Probability to turn cluster head
-		virtual double calculatePi();
+		double calculatePi();
 
-		virtual void recvADV_CH(char *, int, double, int, int);
+		void recvADV_CH(char *, int, double, int, int);
 		inline void recvJOIN_REQ(char *, int);
 		inline void recvADV_SCH(char *, int, int);
 		inline void recvData(char *, int);
@@ -181,23 +182,23 @@ class LeachApp : public CommonNodeApp //SensorBaseApp
 		inline void send(int mac_dst, int link_dst, int type, char * msg, int msg_size, int data_size, double dist, int code);
 		inline void send(int mac_dst, int link_dst, int type, void * msg, int msg_size, int data_size, double dist, int code);
 		inline void send(int mac_dst, int link_dst, int type, SensedData * msg, int data_size, double dist, int code);
-        virtual void disseminateData(SensedData * data);
+        void disseminateData(SensedData * data);
 
 		/* Calculate time required to transmit n bytes of data,
 		 * considering a 1 Mbps radio speed.
 		 */
-		virtual double TxTime(int n) { return n * 8.0 / 1000000.0; }
+		double TxTime(int n) { return n * 8.0 / 1000000.0; }
 
 		/* Initialize LEACH's configuration */
-		virtual void initializeConfig();
+		void initializeConfig();
 
 	protected:
 		void setCode(int code);
-	
+
 	protected:
-		virtual void mergeSensedData(SensedData *);
+		void mergeSensedData(SensedData *);
 		void clearClusterChoices();
-		virtual void clearSensedData();
+		void clearSensedData();
 		int calculateCompression(SensedData * sensedData);
 };
 

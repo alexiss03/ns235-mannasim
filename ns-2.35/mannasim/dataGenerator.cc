@@ -1,6 +1,6 @@
-///  
+///
 /// Copyright (C) 2003-2005 Federal University of Minas Gerais
-/// 
+///
 /// This program is free software; you can redistribute it and/or
 /// modify it under the terms of the GNU General Public License
 /// as published by the Free Software Foundation; either version 2
@@ -11,17 +11,17 @@
 /// GNU General Public License for more details.
 /// You should have received a copy of the GNU General Public License
 /// along with this program; if not, write to the Free Software
-/// Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, 
+/// Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
 /// MA 02110-1301, USA.
-/// 
+///
 /// Base class for the generation of synthetic data. Specialized sensed data,
-/// such as temperture, magnetic field, video, among others, should extends 
-/// this class and add the necessary modifications. 
-/// 
+/// such as temperture, magnetic field, video, among others, should extends
+/// this class and add the necessary modifications.
+///
 /// --
 /// The Manna Reseach Group
 /// e-mail: mannateam@gmail.com
-/// 
+///
 #include "dataGenerator.h"
 
 
@@ -38,40 +38,42 @@ DataGenerator::DataGenerator(AppDataType type) : TclObject()
 {
 	sensTimer_ = new SensingTimer(this);
 	type_ = type;
-	
+
 	bind("sensing_type_",&sensing_type_);
 	bind("sensing_interval_",&sensing_interval_);
 
 }
 
-/// Invokes the collect() function of the sensing object, and gives the 
-/// result of it as a parameter for the processData() processing Object 
-/// function. This simulates the behavior of a sensor node, when it senses 
-/// the environment and then gives the obtained data to its 
+/// Invokes the collect() function of the sensing object, and gives the
+/// result of it as a parameter for the processData() processing Object
+/// function. This simulates the behavior of a sensor node, when it senses
+/// the environment and then gives the obtained data to its
 /// computational part so it can process it.
 void DataGenerator::generateData()
 {
 	double sensT;
-	SensorAppList::iterator it;	
+	SensorAppList::iterator it;
 	SensorBaseApp *app_instance_;
-	
+
 	for(it = app_.begin(); it != app_.end(); it++)
 	{
 		app_instance_ = (*it);
-      
+
       	/// Display node id for debug proposes
 		if((app_instance_->sensor_node_->nodeid()) > 9)
 		{
-			printf("Node %d - ", app_instance_->sensor_node_->nodeid());
+			// Mary Alexis Solis
+			//printf("Node %d - ", app_instance_->sensor_node_->nodeid());
 		}
 		else
 		{
-      		printf("Node 0%d - ", app_instance_->sensor_node_->nodeid());
+			// Mary Alexis Solis
+      //printf("Node 0%d - ", app_instance_->sensor_node_->nodeid());
 		}
-		
+
 		/// Collect sensed data and pass it to the application to processing
 		if(app_instance_->disseminating_type_ == EVENT_DRIVEN)
-		{ 
+		{
 			app_instance_->recvSensedData(collect(), getMaximumAllowedValue());
 		}
 		else
@@ -106,18 +108,18 @@ double DataGenerator::getExpireTime()
 	switch(sensing_type_)
 	{
 		case PROGRAMED:
-			/// If it is a programed sensing activity, use the sensing_interval_, 
+			/// If it is a programed sensing activity, use the sensing_interval_,
 			/// determined by the user, as the expire timer
 			return sensing_interval_;
-		
+
 		case CONTINUOUS:
-			/// If it is a continuous sensing activity, get the expire timer 
+			/// If it is a continuous sensing activity, get the expire timer
 			/// from a normal distribution (limits between 0 and 1)
 			return CONTINUOUS_TIME;
-		
+
 		case ON_DEMAND:
 			return -1;
-		
+
 		case EVENT_DRIVEN:
 			/// If the sensing activity was defined as EVENT_DRIVEN, it should
          	/// be replaced by the CONTINUOUS one
@@ -128,7 +130,7 @@ double DataGenerator::getExpireTime()
 	}
 }
 
-/// Shedule the first sensing event if this activity type isn�t the continuous 
+/// Shedule the first sensing event if this activity type isn�t the continuous
 /// one.
 void DataGenerator::start()
 {
@@ -162,7 +164,7 @@ AppDataType DataGenerator::type() const
 	return type_;
 }
 
-/// NS-2 command function overloaded. Deals with TCL script commands to C++ 
+/// NS-2 command function overloaded. Deals with TCL script commands to C++
 /// implementation.
 int DataGenerator::command(int argc, const char*const* argv)
 {
@@ -180,4 +182,3 @@ double DataGenerator::getSensingInterval()
 {
 	return sensing_interval_;
 }
-

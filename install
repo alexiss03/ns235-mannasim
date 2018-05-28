@@ -32,7 +32,7 @@ warn() {
 	echo "$@"
 }
 
-test_proceed() { 
+test_proceed() {
         echo "";
         echo "The above test indicates that your installation of Cygwin";
         echo "is probably NOT SUITABLE for installing ns-2 allinone.";
@@ -50,11 +50,11 @@ test_proceed() {
 }
 
 test_packages() {
-         for i in $@; do 
+         for i in $@; do
                 echo -n "Checking for ${i}... ";
                 cygcheck -c ${i} | grep ${i} >/dev/null 2>&1;
                 if [ "$?" -eq "0" ]; then
-                        echo "ok"; 
+                        echo "ok";
                 else
                         echo "NO!";
                         echo "";
@@ -63,7 +63,7 @@ test_packages() {
                         echo "Please install it using Cygwin's setup.exe";
                         echo "before trying to install the ns-2 distribution.";
                         test_proceed;
-                fi; 
+                fi;
         done;
 }
 
@@ -125,44 +125,44 @@ cygwin_tests() {
                         echo "variable set to \"binmode\". Please refer to the Cygwin user guide for";
                         echo "details on how to change this.";
                         test_proceed;
-                else 
+                else
                         echo "yes";
                 fi;
-        fi;                           
+        fi;
 
         login=`whoami`
         echo -n "Checking legitimate login name... ";
         echo ${login} | grep " " >/dev/null 2>&1;
         if [ "$?" -eq "0" ]; then
-                echo "NO!"; 
+                echo "NO!";
                 echo "";
                 echo "Your username (${login}) contains spaces,";
                 echo "which makes the installation of ns-2 impossible.";
                 echo "Please try to install ns-2 as a different user, whose";
                 echo "name does not contain any spaces.";
-                
+
                 test_proceed;
-        else 
+        else
                 echo "ok";
         fi;
 
         echo -n "Checking legitimate path name... ";
-        
+
         installpath=`cygpath -d /`;
         echo ${installpath} | grep " " >/dev/null 2>&1;
         if [ "$?" -eq "0" ]; then
-                echo "NO!"; 
+                echo "NO!";
                 echo "";
                 echo "Your Cygwin installation path (${installpath}) contains spaces,";
                 echo "which makes the installation of ns-2 impossible.";
                 echo "Please reinstall Cygwin in a different directory, which";
                 echo "does not contain any spaces.";
                 test_proceed;
-        else 
+        else
                 echo "ok";
         fi;
 
-        test_packages ${packages_base}        
+        test_packages ${packages_base}
 
         echo -n "Checking for diff... ";
         diff -v 2>&1 | grep -iv "not found" >/dev/null 2>&1;
@@ -176,7 +176,7 @@ cygwin_tests() {
                 echo "Please install it using Cygwin's setup.exe";
                 echo "before trying to install the ns-2 distribution.";
                 test_proceed;
-        fi;     
+        fi;
 
         echo -n "Checking for X... ";
         test_packages ${packages_xorg}
@@ -215,7 +215,7 @@ packages_base="gcc4 gcc4-g++ gawk tar gzip make patch perl w32api"
 packages_xorg="xorg-server xinit libX11-devel libXmu-devel"
 
 # Check if we are using Cygwin, and if so, if it is a good install
-# Most Cygwin fixes in the tree and this part of the install script were 
+# Most Cygwin fixes in the tree and this part of the install script were
 # contributed by Nicolas Christin <christin@sims.berkeley.edu>
 
 echo "============================================================"
@@ -233,7 +233,7 @@ if [ -x /usr/bin/uname ]; then
                 echo "Note: Cygwin install is still considered EXPERIMENTAL";
                 echo "";
                 cygwin_tests;
-               
+
                 echo "Patching Tcl/Tk for Cygwin.";
                 if [ ! -f ./tcl${TCLVER}/generic/tcl.h.orig ]; then
                         cp ./tcl${TCLVER}/generic/tcl.h ./tcl${TCLVER}/generic/tcl.h.orig;
@@ -288,10 +288,10 @@ cd ./xgraph-$XGRAPHVER
 if  [ "${test_cygwin}" = "true" ]; then
        touch stamp-h;
 fi;
-if make 
+if make
 then
 	echo "xgraph has been installed successfully. "
-else 
+else
 	echo "Can not create xgraph; But xgraph is an optional package, continuing..."
 fi
 
@@ -351,7 +351,7 @@ else
                 if [ -f libgb.a ] ; then
                         rm -f ../gt-itm/lib/libgb.a
 			cp libgb.a ../gt-itm/lib/libgb.a
-                else 
+                else
 		        echo "* Weird: sgb said it has been built but we can't find libgb.a! "
 			exit -1
                 fi
@@ -373,7 +373,7 @@ echo "============================================================"
 
 if [ -f ./gt-itm/lib/libgb.a ]
 then
- if [ ! -f ./gt-itm/src/Makefile ] 
+ if [ ! -f ./gt-itm/src/Makefile ]
     then
     echo "ns-alline is unable to install gt-itm sgb2ns for you, please install"
     echo "them manually. You can't run scenario generator without gt-itm"
@@ -384,7 +384,7 @@ then
     then
       echo "gt-itm has been installed successfully."
     fi
-    
+
     cd ../sgb2ns
     if make
     then
@@ -421,7 +421,7 @@ fi
 
 cd ../
 
-# Build Tcl8.4.18
+Build Tcl8.4.18
 
 echo "============================================================"
 echo "* Build tcl$TCLVER"
@@ -431,7 +431,7 @@ echo "* Website : http://paultsr.in"
 echo "============================================================"
 
 cd ./tcl$TCLVER/unix
-if [ -f Makefile ] ; then 
+if [ -f Makefile ] ; then
 	make distclean
 fi
 
@@ -439,8 +439,8 @@ blame='Tcl is not part of the ns project.  Please see www.Scriptics.com
 to see if they have a fix for your platform.'
 autoconf
 ./configure --enable-gcc --disable-shared --prefix=$CUR_PATH || die "tcl$TCLVER configuration failed! Exiting ..."
-if make 
-then 
+if make
+then
 	echo "tcl$TCLVER make succeeded."
 	make install || die "tcl$TCLVER installation failed."
 	make install-private-headers || die "tcl$TCLVER installation failed."
@@ -454,7 +454,7 @@ fi
 
 cd ../../
 
-# compile and install tk
+compile and install tk
 
 echo "============================================================"
 echo "* Build Tk$TKVER"
@@ -472,7 +472,7 @@ blame='Tk is not part of the ns project.  Please see www.Scriptics.com
 to see if they have a fix for your platform.'
 autoconf
 ./configure --enable-gcc --disable-shared --disable-xft --disable-xss --prefix=$CUR_PATH || die "tk$TKVER configuration failed! Exiting ..."
-if make 
+if make
 then
 	echo "tk$TKVER build succeeded."
 	make install || die "tk$TKVER installation failed."
@@ -487,13 +487,13 @@ fi
 cd ../../
 
 #
-# Since our configures search for tclsh in $PATH, the following 
+# Since our configures search for tclsh in $PATH, the following
 # is needed. This is necessary for otcl/tclcl/ns/nam
 #
 #PATH=$CUR_PATH/tcl$TCLVER/unix:$CUR_PATH/tk$TKVER/unix:$PATH
 #LD_LIBRARY_PATH=$CUR_PATH/tcl$TCLVER/unix:$CUR_PATH/tk$TKVER/unix:$LD_LIBRARY_PATH
 
-# However, the above library path setting has been found to be still 
+# However, the above library path setting has been found to be still
 # fragile for systems that have multiple versions of Tcl/Tk installed
 # in various places, so in the below, we will force the allinone build
 # to use the tcl/tk version installed with allinone by passing the
@@ -514,7 +514,7 @@ blame='Please check http://www.isi.edu/nsnam/ns/ns-problems.html
 for common problems and bug fixes.'
 if  [ "${test_cygwin}" = "true" ]; then
         ./configure --x-libraries=/usr/X11R6/lib --x-includes=/usr/X11R6/include --with-tcl-ver=$TCLVER --with-tk-ver=$TKVER --disable-shlib || die "otcl-$OTCLVER configuration failed! Exiting ...";
-	if make 
+	if make
 	then
 		echo "otcl-$OTCLVER has been installed successfully."
 	else
@@ -525,7 +525,7 @@ if  [ "${test_cygwin}" = "true" ]; then
 else
         ./configure --with-tcl-ver=$TCLVER --with-tk-ver=$TKVER || die "otcl-$OTCLVER configuration failed! Exiting ...";
 
-	if make 
+	if make
 	then
 		echo "otcl-$OTCLVER has been installed successfully."
 	else
@@ -561,7 +561,7 @@ else
 	echo "tclcl-$TCLCLVER make failed! Exiting ..."
 	echo "See http://www.isi.edu/nsnam/ns/ns-problems.html for problems"
 	exit
-fi	
+fi
 
 cd ../
 
@@ -576,7 +576,7 @@ echo "* Website : http://paultsr.in"
 echo "============================================================"
 
 cd ./ns-$NSVER
-if [ -f Makefile ] ; then 
+if [ -f Makefile ] ; then
 	make distclean
 fi
 
@@ -588,7 +588,7 @@ fi
 
 if make
 then
-	echo " Ns has been installed successfully." 
+	echo " Ns has been installed successfully."
 else
 	echo "Ns make failed!"
 	echo "See http://www.isi.edu/nsnam/ns/ns-problems.html for problems"
@@ -623,12 +623,12 @@ else
 fi
 
 if make
-then 
+then
     echo "Nam has been installed successfully."
 elif  [ "${test_darwin}" = "true" ]; then
     # XXX workaround for OS X nam Tcl/Tk problems
-    echo "Nam make failed! Trying to relink..."
-    echo "g++ -o nam tkcompat.o tkUnixInit.o xwd.o netview.o netmodel.o edge.o packet.o node.o main.o trace.o queue.o drop.o animation.o agent.o feature.o route.o transform.o paint.o state.o monitor.o anetmodel.o rng.o view.o graphview.o netgraph.o tracehook.o lan.o psview.o group.o editview.o tag.o address.o animator.o wnetmodel.o nam_stream.o enetmodel.o testview.o parser.o trafficsource.o lossmodel.o queuehandle.o gen/version.o gen/nam_tcl.o  ../tcl8.5.10/unix/libtcl8.5.a ../tk8.5.10/unix/libtk8.5.a ../tcl8.5.10/unix/libtclstub8.5.a -L../tclcl-1.20 -ltclcl -L../otcl -lotcl -L/usr/lib -lz -L/usr/X11R6/lib -lXext -lX11 -lm -L. -lcorefoundation"
+    # echo "Nam make failed! Trying to relink..."
+    # echo "g++ -o nam tkcompat.o tkUnixInit.o xwd.o netview.o netmodel.o edge.o packet.o node.o main.o trace.o queue.o drop.o animation.o agent.o feature.o route.o transform.o paint.o state.o monitor.o anetmodel.o rng.o view.o graphview.o netgraph.o tracehook.o lan.o psview.o group.o editview.o tag.o address.o animator.o wnetmodel.o nam_stream.o enetmodel.o testview.o parser.o trafficsource.o lossmodel.o queuehandle.o gen/version.o gen/nam_tcl.o  ../tcl8.5.10/unix/libtcl8.5.a ../tk8.5.10/unix/libtk8.5.a ../tcl8.5.10/unix/libtclstub8.5.a -L../tclcl-1.20 -ltclcl -L../otcl -lotcl -L/usr/lib -lz -L/usr/X11R6/lib -lXext -lX11 -lm -L. -lcorefoundation"
     g++ -o nam tkcompat.o tkUnixInit.o xwd.o netview.o netmodel.o edge.o packet.o node.o main.o trace.o queue.o drop.o animation.o agent.o feature.o route.o transform.o paint.o state.o monitor.o anetmodel.o rng.o view.o graphview.o netgraph.o tracehook.o lan.o psview.o group.o editview.o tag.o address.o animator.o wnetmodel.o nam_stream.o enetmodel.o testview.o parser.o trafficsource.o lossmodel.o queuehandle.o gen/version.o gen/nam_tcl.o  ../tcl8.5.10/unix/libtcl8.5.a ../tk8.5.10/unix/libtk8.5.a ../tcl8.5.10/unix/libtclstub8.5.a -L../tclcl-1.20 -ltclcl -L../otcl -lotcl -L/usr/lib -lz -L/usr/X11R6/lib -lXext -lX11 -lm -L. -lcorefoundation
     if [ -e nam ]; then
         echo "Nam relinking succeeded; nam has been installed successfully."
@@ -681,7 +681,7 @@ else
 fi
 
 if test -x $CUR_PATH/gt-itm/bin/sgb2ns${EXE}
-then 
+then
     ln -s $CUR_PATH/gt-itm/bin/sgb2ns${EXE} sgb2ns${EXE}
     ln -s $CUR_PATH/gt-itm/bin/sgb2hierns${EXE} sgb2hierns${EXE}
     ln -s $CUR_PATH/gt-itm/bin/sgb2comns${EXE} sgb2comns${EXE}
@@ -694,12 +694,12 @@ fi
 
 echo ""
 echo "Ns-allinone package has been installed successfully."
-echo "Here are the installation places:"
-echo "tcl$TCLVER:	$CUR_PATH/{bin,include,lib}"
-echo "tk$TKVER:		$CUR_PATH/{bin,include,lib}"
-echo "otcl:		$CUR_PATH/otcl-$OTCLVER"
-echo "tclcl:		$CUR_PATH/tclcl-$TCLCLVER"
-echo "ns:		$CUR_PATH/ns-$NSVER/ns"
+# echo "Here are the installation places:"
+# echo "tcl$TCLVER:	$CUR_PATH/{bin,include,lib}"
+# echo "tk$TKVER:		$CUR_PATH/{bin,include,lib}"
+# echo "otcl:		$CUR_PATH/otcl-$OTCLVER"
+# echo "tclcl:		$CUR_PATH/tclcl-$TCLCLVER"
+# echo "ns:		$CUR_PATH/ns-$NSVER/ns"
 
 if [ -x $CUR_PATH/nam-$NAMVER/nam ]
 then
@@ -710,7 +710,7 @@ if [ -x $CUR_PATH/xgraph-$XGRAPHVER/xgraph ]
 then
 echo "xgraph:	$CUR_PATH/xgraph-$XGRAPHVER"
 fi
-if [ -x $CUR_PATH/gt-itm/bin/sgb2ns ] 
+if [ -x $CUR_PATH/gt-itm/bin/sgb2ns ]
 then
 echo "gt-itm:   $CUR_PATH/itm, edriver, sgb2alt, sgb2ns, sgb2comns, sgb2hierns"
 fi
@@ -755,4 +755,3 @@ echo ""
 #kill -9 -1
 
 exit 0
-

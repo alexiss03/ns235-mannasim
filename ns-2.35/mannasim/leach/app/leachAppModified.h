@@ -111,6 +111,7 @@ class LeachAppWithResignation : public CommonNodeApp //SensorBaseApp
 	private:
 		bool        isCH_;	        // Is cluster-head?
 		bool        hasBeenCH_;      // Has been cluster-head?
+		double			initial_energy_;
 
 	public:
 		struct leachConfig
@@ -170,12 +171,9 @@ class LeachAppWithResignation : public CommonNodeApp //SensorBaseApp
 		virtual void informClusterHead();
 
 		// Modified by Mary Alexis Solis
-		void resignClusterHead();
+		void resignClusterHead(int src);
 		void challegeNodeAsNewClusterHead();
-		void acceptChallengeAsClusterHead(chadv element);
-
-		void recvChallengeNode(char * msg, int size, double distance, int src, int lnk_src);
-		void recvClusterHeadResignNode(char * msg, int size, double distance, int src, int lnk_src);
+		void acceptChallengeAsClusterHead(int src);
 
 		virtual void createSchedule();
 		virtual void advertiseClusterHead();
@@ -192,6 +190,10 @@ class LeachAppWithResignation : public CommonNodeApp //SensorBaseApp
 		virtual double calculatePi();
 
 		virtual void recvADV_CH(char *, int, double, int, int);
+		virtual void recvChallengeNode(char *, int, double, int, int);
+		virtual void recvAcceptChallengeNode(char * msg, int size, double distance, int src, int lnk_src);
+		virtual void recvClusterHeadResignNode(char * msg, int size, double distance, int src, int lnk_src);
+
 		inline void recvJOIN_REQ(char *, int);
 		inline void recvADV_SCH(char *, int, int);
 		inline void recvData(char *, int);

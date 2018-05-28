@@ -1,6 +1,6 @@
-///  
+///
 /// Copyright (C) 2003-2005 Federal University of Minas Gerais
-/// 
+///
 /// This program is free software; you can redistribute it and/or
 /// modify it under the terms of the GNU General Public License
 /// as published by the Free Software Foundation; either version 2
@@ -11,15 +11,15 @@
 /// GNU General Public License for more details.
 /// You should have received a copy of the GNU General Public License
 /// along with this program; if not, write to the Free Software
-/// Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, 
+/// Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
 /// MA 02110-1301, USA.
-/// 
+///
 /// This class represents the power supply of the node. It is derived from
 /// NS-2 Energy model.
-/// 
+///
 /// authors: Linnyer B. Ruiz
 ///	         Fabricio A. Silva
-///			 Thais Regina de M. Braga 
+///			 Thais Regina de M. Braga
 ///  		 Kalina Ramos Porto
 ///
 /// code revisor: Carlos Eduardo R. Lopes
@@ -28,15 +28,15 @@
 /// The Manna Reseach Group
 /// e-mail: mannateam@gmail.com
 ///
-/// This project was financially supported by The National Council 
-/// for Scientific and Technological Development (CNPq) from the 
+/// This project was financially supported by The National Council
+/// for Scientific and Technological Development (CNPq) from the
 /// brazilian government under the process number 55.2111/2002-3.
 ///
 #include "battery.h"
 
-/// This static class creates a link between the C++ class and the TCL script 
-/// in the simulation scenario. Provides an instance of the 
-/// Battery class in the TCL simulation script. 
+/// This static class creates a link between the C++ class and the TCL script
+/// in the simulation scenario. Provides an instance of the
+/// Battery class in the TCL simulation script.
 static class BatteryClass : public TclClass
 {
 	public:
@@ -45,9 +45,9 @@ static class BatteryClass : public TclClass
 			if (argc == 8)
 			{
 				MobileNode *n=(MobileNode*)TclObject::lookup(argv[4]);
-				return (new Battery(n, 
-									atof(argv[5]), 
-									atof(argv[6]), 
+				return (new Battery(n,
+									atof(argv[5]),
+									atof(argv[6]),
 									atof(argv[7])));
 			}
 			else
@@ -59,18 +59,18 @@ static class BatteryClass : public TclClass
 } class_battery;
 
 /// Constructor. Invoke EnergyModel constructor with need parameters.
-Battery::Battery(MobileNode* node, double energy, double l1, double l2) : 
+Battery::Battery(MobileNode* node, double energy, double l1, double l2) :
 										EnergyModel(node, energy, l1, l2)
 {
 }
 
-/// Computes the energy consumed when the node is sensing data. 
+/// Computes the energy consumed when the node is sensing data.
 void Battery::DecrSensingEnergy(double sensing_time, double sensing_power)
 {
 	double consumed_energy = sensing_power * sensing_time;
-	
-	/// The energy_ variable indicates the amount of energy of the node. 
-	/// This variable is defined at EnergyModel class. 
+
+	/// The energy_ variable indicates the amount of energy of the node.
+	/// This variable is defined at EnergyModel class.
 	if (energy_ <= consumed_energy)
 	{
 		energy_ = 0.0;
@@ -81,23 +81,23 @@ void Battery::DecrSensingEnergy(double sensing_time, double sensing_power)
 	}
 }
 
-/// Computes the energy consumed when the node is processing data. 
+/// Computes the energy consumed when the node is processing data.
 void Battery::DecrProcessingEnergy(int number_instructions, double instructions_per_second, double processing_power)
 {
 	double processing_time;
 	double consumed_energy;
-	
+
 	if (instructions_per_second == 0)
 	{
 		fprintf(stderr,"Battery::DecrProcessingEnergy - Division by zero!!!\n");
 		abort();
-	} 
- 	
+	}
+
  	processing_time = ((double)(number_instructions))/instructions_per_second;
 	consumed_energy = processing_power * processing_time;
-	
-	/// The energy_ variable indicates the amount of energy of the node. 
-	/// This variable is defined at EnergyModel class. 
+
+	/// The energy_ variable indicates the amount of energy of the node.
+	/// This variable is defined at EnergyModel class.
 	if (energy_ <= consumed_energy)
 	{
 		energy_ = 0.0;
@@ -107,6 +107,12 @@ void Battery::DecrProcessingEnergy(int number_instructions, double instructions_
 		energy_ = energy_ - consumed_energy;
 	}
 }
+
+/// Turn senso node On.
+float Battery::energy(){
+	return energy_;
+}
+
 
 /// Turn senso node On.
 void Battery::setNodeOn(){
@@ -128,7 +134,7 @@ void Battery::sleep()
 	for (Phy * wp = head.lh_first; wp; wp = wp->nextnode())
 	{
 		((WirelessPhy *) wp)->node_off();
-	}	
+	}
 }
 
 /// Wake up sleppy sensor node.
