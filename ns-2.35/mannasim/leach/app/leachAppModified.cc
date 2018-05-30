@@ -129,21 +129,21 @@ void LeachAppWithResignation::start()
 
 void LeachAppWithResignation::goToSleep()
 {
-	//((Battery *) sensor_node_->energy_model())->sleep();
+	((Battery *) sensor_node_->energy_model())->sleep();
 }
 
 void LeachAppWithResignation::wakeUp()
 {
-  //((Battery *) sensor_node_->energy_model())->wakeUp();
+  ((Battery *) sensor_node_->energy_model())->wakeUp();
 }
 
 void LeachAppWithResignation::setCode(int code)
 {
 	//printf("%d is setting code to %d\n", sensor_node_->nodeid(), code);
   code_        = 0;
-  mac_->code() = 0;
+  //mac_->code() = 0;
   //code_        = code;
-  //mac_->code() = code;
+  mac_->code() = code;
 }
 
 void LeachAppWithResignation::setClusterHead()
@@ -171,8 +171,8 @@ void LeachAppWithResignation::decideClusterHead()
 	wakeUp();
 
 	CHHeard_  = false;
-  // Mayr Alexis Solis
-  isCH_ = false;
+  // Mary Alexis Solis
+  //isCH_ = false;
   //hasBeenCH_ = false;
 
 	// CheckIsAlive???
@@ -220,7 +220,8 @@ void LeachAppWithResignation::decideClusterHead()
 	Scheduler::instance().schedule(
 		eventHandler_,
 		new LeachEvent(&LeachAppWithResignation::findBestCluster),
-    Scheduler::instance().clock() + config_.ra_advTotal_ + 20);
+    //Scheduler::instance().clock() + config_.ra_advTotal_ + 20);
+    Scheduler::instance().clock() + config_.ra_advTotal_+20);
     //+config_.rndAdvDelay_);
     //config_.ra_advTotal_);
 }
@@ -240,15 +241,15 @@ double LeachAppWithResignation::calculatePi()
 	if (hasBeenClusterHead())
 		thresh = 0;
   //else
-	//else if (n - k * round_ < 1)
-  else if (round_ == 1)
+  else if (n - k * round_ < 1)
+//  else if (round_ == 1)
 		thresh = 1;
  else
-  //thresh = 1;
-//  thresh = (double) k / n * 3;
-	thresh = (double) k / (n - k * round_);
+  thresh = 1;
+// thresh = (double) k / n * 3;
+	//thresh = (double) k / (n - k * round_);
 
-  //printf("Threshold %f\n",thresh);
+  printf("Threshold %f\n",thresh);
 
 //  return 1.0;
 	return thresh;
@@ -270,7 +271,7 @@ void LeachAppWithResignation::advertiseClusterHead()
 	setCode(clusterCode);
 
 	wakeUp();
-  printf("Adverstise cluster head \n");
+  printf("Advertise cluster head at %lf\n", Scheduler::instance().clock());
 
 	send(
 		MAC_BROADCAST,
@@ -355,9 +356,9 @@ void LeachAppWithResignation::findBestCluster()
 			new LeachEvent(&LeachAppWithResignation::informClusterHead),
       Scheduler::instance().clock());
       //+config_.ra_advTotal_ + Random::uniform(0, config_.ra_join_ - config_.ra_delay_));
-		 //config_.ra_advTotal_ + Random::uniform(0, config_.ra_join_ - config_.ra_delay_));;
+		  //config_.ra_advTotal_ + Random::uniform(0, config_.ra_join_ - config_.ra_delay_));;
 
-		goToSleep();
+		//goToSleep();
 
 
 		setCode(clusterCode);
@@ -431,7 +432,8 @@ void LeachAppWithResignation::acceptChallengeAsClusterHead(int src)
   int dataSize;
   int nodeId;
 
-  isCH_   = true;
+  setClusterHead();
+
   dataSize = config_.spreading_ * BYTES_ID;
   nodeId = sensor_node_->nodeid();
 
@@ -519,7 +521,7 @@ void LeachAppWithResignation::createSchedule()
 			dist_,
 			code_);
 
-		listenJOINREQ_ = false;
+		//listenJOINREQ_ = false;
 
 
 		frameTime_   = (5 + clusterNodes_.size()) * config_.ssSlotTime_;
@@ -546,6 +548,7 @@ void LeachAppWithResignation::recv(int type, double distance, int link_dst, int 
   }
 
   if (isClusterHead()  && energy_ < initial_energy_ * 0.99) {
+  //if (isClusterHead()) {
     initial_energy_ = energy_;
 
     Scheduler::instance().schedule(
@@ -642,7 +645,7 @@ void LeachAppWithResignation::recvChallengeNode(char * msg, int size, double dis
 			*((int *) msg),
 			Scheduler::instance().clock());
 
-      acceptChallengeAsClusterHead(src);
+      acceptChallengeAsClusterHead(*((int *) msg));
 }
 
 void LeachAppWithResignation::recvAcceptChallengeNode(char * msg, int size, double distance, int src, int lnk_src)
