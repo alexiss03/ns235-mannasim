@@ -185,8 +185,12 @@ void LeachApp::decideClusterHead()
 		Scheduler::instance().schedule(
 			eventHandler_,
 			new LeachEvent(&LeachApp::advertiseClusterHead),
+<<<<<<< HEAD
       config_.rndAdvDelay_);
 			//Scheduler::instance().clock() + config_.rndAdvDelay_);
+=======
+			Scheduler::instance().clock() + config_.rndAdvDelay_);
+>>>>>>> 700e6be944a45c491466040a8f54c333a4307495
 	}
 	else
 	{
@@ -201,14 +205,23 @@ void LeachApp::decideClusterHead()
 	Scheduler::instance().schedule(
 		eventHandler_,
 		new LeachEvent(&LeachApp::decideClusterHead),
+<<<<<<< HEAD
 		nextChangeTime_);
 		//Scheduler::instance().clock() + config_.changeTimeIncrement_);
+=======
+//		nextChangeTime_);
+		Scheduler::instance().clock() + config_.changeTimeIncrement_);
+>>>>>>> 700e6be944a45c491466040a8f54c333a4307495
 
 	Scheduler::instance().schedule(
 		eventHandler_,
 		new LeachEvent(&LeachApp::findBestCluster),
+<<<<<<< HEAD
     config_.ra_advTotal_);
 		//Scheduler::instance().clock() + config_.ra_advTotal_);
+=======
+		Scheduler::instance().clock() + config_.ra_advTotal_);
+>>>>>>> 700e6be944a45c491466040a8f54c333a4307495
 }
 
 double LeachApp::calculatePi()
@@ -291,8 +304,12 @@ void LeachApp::findBestCluster()
 		Scheduler::instance().schedule(
 			eventHandler_,
 			new LeachEvent(&LeachApp::createSchedule),
+<<<<<<< HEAD
       config_.ra_advTotal_ + config_.ra_join_);
 			//Scheduler::instance().clock() + config_.ra_advTotal_ + config_.ra_join_);
+=======
+			Scheduler::instance().clock() + config_.ra_advTotal_ + config_.ra_join_);
+>>>>>>> 700e6be944a45c491466040a8f54c333a4307495
 	}
 	else
 	{
@@ -335,8 +352,12 @@ void LeachApp::findBestCluster()
 		Scheduler::instance().schedule(
 			eventHandler_,
 			new LeachEvent(&LeachApp::informClusterHead),
+<<<<<<< HEAD
       config_.ra_advTotal_ + Random::uniform(0, config_.ra_join_ - config_.ra_delay_));;
 			//Scheduler::instance().clock() + config_.ra_advTotal_ + Random::uniform(0, config_.ra_join_ - config_.ra_delay_));;
+=======
+			Scheduler::instance().clock() + config_.ra_advTotal_ + Random::uniform(0, config_.ra_join_ - config_.ra_delay_));;
+>>>>>>> 700e6be944a45c491466040a8f54c333a4307495
 
 		goToSleep();
 
@@ -433,8 +454,12 @@ void LeachApp::createSchedule()
 		Scheduler::instance().schedule(
 			eventHandler_,
 			new LeachEvent(&LeachApp::sendDataToBS),
+<<<<<<< HEAD
       xmitTime_);
 			//Scheduler::instance().clock() + xmitTime_);
+=======
+			Scheduler::instance().clock() + xmitTime_);
+>>>>>>> 700e6be944a45c491466040a8f54c333a4307495
 	}
 }
 
@@ -584,8 +609,12 @@ void LeachApp::recvADV_SCH(char * msg, int size, int src)
 					Scheduler::instance().schedule(
 						eventHandler_,
 						new LeachEvent(&LeachApp::sendData),
+<<<<<<< HEAD
             xmitTime_);
 						//Scheduler::instance().clock() + xmitTime_);
+=======
+						Scheduler::instance().clock() + xmitTime_);
+>>>>>>> 700e6be944a45c491466040a8f54c333a4307495
 
 					goToSleep();
 				}
@@ -673,8 +702,12 @@ void LeachApp::sendData()
 		Scheduler::instance().schedule(
 			eventHandler_,
 			new LeachEvent(&LeachApp::sendData),
+<<<<<<< HEAD
       frameTime_);
 			//Scheduler::instance().clock()+frameTime_);
+=======
+			Scheduler::instance().clock()+frameTime_);
+>>>>>>> 700e6be944a45c491466040a8f54c333a4307495
 }
 
 void LeachApp::send(int mac_dst, int link_dst, int type, char * msg, int msg_size, int data_size, double dist, int code)
@@ -767,8 +800,12 @@ void LeachApp::sendDataToBS()
 		Scheduler::instance().schedule(
 			eventHandler_,
 			new LeachEvent(&LeachApp::sendDataToBS),
+<<<<<<< HEAD
       xmitat);
 			//Scheduler::instance().clock()+xmitat);
+=======
+			Scheduler::instance().clock()+xmitat);
+>>>>>>> 700e6be944a45c491466040a8f54c333a4307495
 }
 
 void LeachApp::sendMyDataToBS()

@@ -172,7 +172,11 @@ class LeachAppWithResignation : public CommonNodeApp //SensorBaseApp
 
 		// Modified by Mary Alexis Solis
 		void resignClusterHead(int src);
+<<<<<<< HEAD
 		void challengeNodeAsNewClusterHead();
+=======
+		void challegeNodeAsNewClusterHead();
+>>>>>>> 700e6be944a45c491466040a8f54c333a4307495
 		void acceptChallengeAsClusterHead(int src);
 
 		virtual void createSchedule();
