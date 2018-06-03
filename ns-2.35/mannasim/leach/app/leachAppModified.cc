@@ -120,7 +120,6 @@ void LeachAppWithResignation::start()
 
 	mac_ = (MacSensor *) ((RCAgent *) agent_)->getMAC();
 	mac_->node_num() = sensor_node_->nodeid();
-<<<<<<< HEAD
 
   decideClusterHead();
 
@@ -129,14 +128,6 @@ void LeachAppWithResignation::start()
 	CommonNodeApp::start();
 
   printf("Initial energy of %d is  %f.\n", sensor_node_->nodeid(), initial_energy_);
-
-=======
-	decideClusterHead();
-
-	CommonNodeApp::start();
-
-  initial_energy_ = ((Battery *) sensor_node_->energy_model())->energy();
->>>>>>> 700e6be944a45c491466040a8f54c333a4307495
 }
 
 void LeachAppWithResignation::goToSleep()
@@ -146,27 +137,16 @@ void LeachAppWithResignation::goToSleep()
 
 void LeachAppWithResignation::wakeUp()
 {
-<<<<<<< HEAD
   ///((Battery *) sensor_node_->energy_model())->wakeUp();
-=======
-  //((Battery *) sensor_node_->energy_model())->wakeUp();
->>>>>>> 700e6be944a45c491466040a8f54c333a4307495
 }
 
 void LeachAppWithResignation::setCode(int code)
 {
 	//printf("%d is setting code to %d\n", sensor_node_->nodeid(), code);
-<<<<<<< HEAD
 //  code_        = 0;
 //  mac_->code() = 0;
   code_        = code;
   mac_->code() = code;
-=======
-  code_        = 0;
-  mac_->code() = 0;
-  //code_        = code;
-  //mac_->code() = code;
->>>>>>> 700e6be944a45c491466040a8f54c333a4307495
 }
 
 void LeachAppWithResignation::setClusterHead()
@@ -187,24 +167,16 @@ void LeachAppWithResignation::unsetClusterHead()
 
 void LeachAppWithResignation::decideClusterHead()
 {
-<<<<<<< HEAD
   double energy_ = ((Battery *) sensor_node_->energy_model())->energy();
 
   //printf("Decide cluster head of %d at time %lf round: %d at energy level %d\n", sensor_node_->nodeid(), Scheduler::instance().clock(), round_, energy_);
-=======
-  printf("Decide cluster head of %d at time %lf round: %d\n", sensor_node_->nodeid(), Scheduler::instance().clock(), round_);
->>>>>>> 700e6be944a45c491466040a8f54c333a4307495
 	int totRounds;
 
 	setCode(0);
 	wakeUp();
 
 	CHHeard_  = false;
-<<<<<<< HEAD
   // Mary Alexis Solis
-=======
-  // Mayr Alexis Solis
->>>>>>> 700e6be944a45c491466040a8f54c333a4307495
   isCH_ = false;
   //hasBeenCH_ = false;
 
@@ -213,38 +185,25 @@ void LeachAppWithResignation::decideClusterHead()
 	totRounds = config_.numberNodes_ / config_.desiredClusters_;
   //printf("Total rounds: %d", totRounds);
 
-<<<<<<< HEAD
 	if (round_ >= totRounds) {
 //  if (round_ >= 1) {
-=======
-	//if (round_ >= totRounds) {
-  if (round_ >= 3) {
->>>>>>> 700e6be944a45c491466040a8f54c333a4307495
 		round_ = 0;
   }
 
 	if (round_ == 0) {
 		setHasNotBeenClusterHead();
-<<<<<<< HEAD
     //isCH_ = false;
-=======
->>>>>>> 700e6be944a45c491466040a8f54c333a4307495
   }
 
 	if (Random::uniform(0, 1) < calculatePi())
 	{
-<<<<<<< HEAD
 		printf("Node %d is a cluster head at time %lf with energy: %f\n", sensor_node_->nodeid(), Scheduler::instance().clock(), energy_);
-=======
-		printf("Node %d is a cluster head at time %lf\n", sensor_node_->nodeid(), Scheduler::instance().clock());
->>>>>>> 700e6be944a45c491466040a8f54c333a4307495
 
 		setClusterHead();
 
 		Scheduler::instance().schedule(
 			eventHandler_,
 			new LeachEvent(&LeachAppWithResignation::advertiseClusterHead),
-<<<<<<< HEAD
      //Scheduler::instance().clock() + 0.01);
     //  config_.rndAdvDelay_);
     0.01);
@@ -263,41 +222,18 @@ void LeachAppWithResignation::decideClusterHead()
 	round_++;
 	//nextChangeTime_ = Scheduler::instance().clock() + config_.changeTimeIncrement_;
   nextChangeTime_ = config_.changeTimeIncrement_;
-=======
-      Scheduler::instance().clock());
-      //config_.rndAdvDelay_);
-	}
-	else
-	{
-		unsetClusterHead();
-		listenADV_ = true;
-		clearClusterChoices();
-	}
-
-	round_++;
-	nextChangeTime_ = Scheduler::instance().clock() + config_.changeTimeIncrement_;
->>>>>>> 700e6be944a45c491466040a8f54c333a4307495
 
 	Scheduler::instance().schedule(
 		eventHandler_,
 		new LeachEvent(&LeachAppWithResignation::decideClusterHead),
-<<<<<<< HEAD
   	nextChangeTime_);
 	//  config_.changeTimeIncrement_);
-=======
-  	 //nextChangeTime_);
-	  config_.changeTimeIncrement_);
->>>>>>> 700e6be944a45c491466040a8f54c333a4307495
 
 	Scheduler::instance().schedule(
 		eventHandler_,
 		new LeachEvent(&LeachAppWithResignation::findBestCluster),
-<<<<<<< HEAD
    Scheduler::instance().clock() + config_.ra_advTotal_);
   //  Scheduler::instance().clock() + config_.ra_advTotal_+20);
-=======
-    Scheduler::instance().clock() + config_.ra_advTotal_ + 20);
->>>>>>> 700e6be944a45c491466040a8f54c333a4307495
     //+config_.rndAdvDelay_);
     //config_.ra_advTotal_);
 }
@@ -317,21 +253,12 @@ double LeachAppWithResignation::calculatePi()
 	if (hasBeenClusterHead())
 		thresh = 0;
   //else
-<<<<<<< HEAD
   else if (n - k * round_ < 1)
 //  else if (round_ == 1)
 		thresh = 1;
  else
 // thresh = 1;
   //thresh = (double) k / n * 3;
-=======
-	//else if (n - k * round_ < 1)
-  else if (round_ == 1)
-		thresh = 1;
- else
-  //thresh = 1;
-//  thresh = (double) k / n * 3;
->>>>>>> 700e6be944a45c491466040a8f54c333a4307495
 	thresh = (double) k / (n - k * round_);
 
   //printf("Threshold %f\n",thresh);
@@ -352,20 +279,12 @@ void LeachAppWithResignation::advertiseClusterHead()
 	currentCHMAC_ = MAC_BROADCAST;
 
 	clusterCode = (mac_->myADVnum() % numCodesAvail) + 1;
-
-<<<<<<< HEAD
 	//setCode(clusterCode);
 
 	wakeUp();
 
   double energy_ = ((Battery *) sensor_node_->energy_model())->energy();
   printf("SENDING ADV_CH from %d at %lf link broadcast: %d at energy: %d\n", currentCH_, Scheduler::instance().clock(), LINK_BROADCAST, energy_);
-=======
-	setCode(clusterCode);
-
-	wakeUp();
-  printf("Adverstise cluster head \n");
->>>>>>> 700e6be944a45c491466040a8f54c333a4307495
 
 	send(
 		MAC_BROADCAST,
@@ -383,11 +302,7 @@ void LeachAppWithResignation::advertiseClusterHead()
 
 void LeachAppWithResignation::findBestCluster()
 {
-<<<<<<< HEAD
   printf("Started to find best cluster for %d at time:%lf isClusterHead: %d\n", sensor_node_->nodeid(), Scheduler::instance().clock(), isClusterHead());
-=======
-  printf("Started to find best cluster at time:%lf\n", Scheduler::instance().clock());
->>>>>>> 700e6be944a45c491466040a8f54c333a4307495
 //	int numCodesAvail, clusterCode;
 
 //	numCodesAvail = 2 * config_.spreading_ - 1;
@@ -408,14 +323,9 @@ void LeachAppWithResignation::findBestCluster()
 		Scheduler::instance().schedule(
 			eventHandler_,
 			new LeachEvent(&LeachAppWithResignation::createSchedule),
-<<<<<<< HEAD
       0.01);
     //  Scheduler::instance().clock()+config_.ra_advTotal_);
     //  config_.ra_advTotal_ + config_.ra_join_);
-=======
-      Scheduler::instance().clock()+config_.ra_advTotal_);
-      //config_.ra_advTotal_ + config_.ra_join_);
->>>>>>> 700e6be944a45c491466040a8f54c333a4307495
 	}
 	else
 	{
@@ -458,7 +368,6 @@ void LeachAppWithResignation::findBestCluster()
 		Scheduler::instance().schedule(
 			eventHandler_,
 			new LeachEvent(&LeachAppWithResignation::informClusterHead),
-<<<<<<< HEAD
       0.01);
      //Scheduler::instance().clock() +  Random::uniform(0, config_.ra_join_ - config_.ra_delay_));
       //+config_.ra_advTotal_ + Random::uniform(0, config_.ra_join_ - config_.ra_delay_));
@@ -469,16 +378,6 @@ void LeachAppWithResignation::findBestCluster()
 		//goToSleep();
 		//setCode(clusterCode);
     setCode(0);
-=======
-      Scheduler::instance().clock());
-      //+config_.ra_advTotal_ + Random::uniform(0, config_.ra_join_ - config_.ra_delay_));
-		 //config_.ra_advTotal_ + Random::uniform(0, config_.ra_join_ - config_.ra_delay_));;
-
-		goToSleep();
-
-
-		setCode(clusterCode);
->>>>>>> 700e6be944a45c491466040a8f54c333a4307495
 
 		printf("Current cluster-head of %d is %d, which code is %d, at distance is %lf\n",
 			sensor_node_->nodeid(),
@@ -487,7 +386,6 @@ void LeachAppWithResignation::findBestCluster()
 			dist_);
 	}
 
-<<<<<<< HEAD
 	//listenADV_ = false;
 	clearClusterChoices();
 }
@@ -519,14 +417,6 @@ void LeachAppWithResignation::findBestCluster()
 // 		code_);
 // }
 
-
-
-=======
-	listenADV_ = false;
-	clearClusterChoices();
-}
-
->>>>>>> 700e6be944a45c491466040a8f54c333a4307495
 void LeachAppWithResignation::informClusterHead()
 {
 	int dataSize;
@@ -541,21 +431,14 @@ void LeachAppWithResignation::informClusterHead()
 	dataSize = config_.spreading_ * BYTES_ID;
 	nodeId   = sensor_node_->nodeid();
 
-<<<<<<< HEAD
 	send(
 //		MAC_BROADCAST,
-=======
-  listenADV_ = true;
-
-	send(
->>>>>>> 700e6be944a45c491466040a8f54c333a4307495
 		currentCHMAC_,
 		currentCH_,
 		LEACH_JOIN_REQ,
 		(char *) (&nodeId),
 		sizeof(int),
 		dataSize,
-<<<<<<< HEAD
 		config_.maxDist_,		// Using maxDist_, the CH can discover node's distance
 //		dist_,
 		code_);
@@ -565,14 +448,6 @@ void LeachAppWithResignation::informClusterHead()
 
 // Modified by Mary Alexis Solis
 void LeachAppWithResignation::challengeNodeAsNewClusterHead()
-=======
-		config_.maxDist_ + 1,		// Using maxDist_, the CH can discover node's distance
-		code_);
-}
-
-// Modified by Mary Alexis Solis
-void LeachAppWithResignation::challegeNodeAsNewClusterHead()
->>>>>>> 700e6be944a45c491466040a8f54c333a4307495
 {
   int dataSize;
 
@@ -602,12 +477,7 @@ void LeachAppWithResignation::acceptChallengeAsClusterHead(int src)
   int dataSize;
   int nodeId;
 
-<<<<<<< HEAD
   setClusterHead();
-
-=======
-  isCH_   = true;
->>>>>>> 700e6be944a45c491466040a8f54c333a4307495
   dataSize = config_.spreading_ * BYTES_ID;
   nodeId = sensor_node_->nodeid();
 
@@ -632,16 +502,11 @@ void LeachAppWithResignation::resignClusterHead(int src)
   isCH_      = false;
   hasBeenCH_ = true;
 
-<<<<<<< HEAD
 	printf("Sending resignation to member nodes.\n");
-=======
-	printf("Sending resignation to member nodes");
->>>>>>> 700e6be944a45c491466040a8f54c333a4307495
 
 	dataSize = config_.spreading_ * BYTES_ID;
 	nodeId   = sensor_node_->nodeid();
 
-<<<<<<< HEAD
   // for (CNs::iterator it = clusterNodes_.begin(); it != clusterNodes_.end(); it++)
   // {
   //   dataSize = config_.spreading_ * BYTES_ID;
@@ -667,40 +532,16 @@ void LeachAppWithResignation::resignClusterHead(int src)
     dataSize,
     config_.maxDist_,		// Using maxDist_, the CH can discover node's distance
     code_);
-=======
-  for (CNs::iterator it = clusterNodes_.begin(); it != clusterNodes_.end(); it++)
-  {
-    dataSize = config_.spreading_ * BYTES_ID;
-    printf("Sending resignation %d sensor node %d\n\n\n", *it, currentCH_);
-
-  	send(
-  		MAC_BROADCAST,
-  		*it,
-  		LEACH_RESIGN_CH,
-  		(char *) (&src),
-      sizeof(int),
-  		dataSize,
-  		config_.maxDist_,		// Using maxDist_, the CH can discover node's distance
-  		code_);
-  }
->>>>>>> 700e6be944a45c491466040a8f54c333a4307495
 }
 
 
 void LeachAppWithResignation::createSchedule()
 {
-<<<<<<< HEAD
   //return;
 	if (clusterNodes_.empty())
 	{
 		printf("Warning! There are no nodes in cluster %d\n",
 			sensor_node_->nodeid());
-=======
-	if (clusterNodes_.empty())
-	{
-		//printf("Warning! There are no nodes in cluster %d\n",
-		//	sensor_node_->nodeid());
->>>>>>> 700e6be944a45c491466040a8f54c333a4307495
 		sendMyDataToBS();
 	}
 	else
@@ -720,13 +561,7 @@ void LeachAppWithResignation::createSchedule()
 		}
 
 		printf("at time %lf\n", Scheduler::instance().clock());
-<<<<<<< HEAD
 		dataSize = config_.spreading_ * sizeof(int) * clusterNodes_.size();
-=======
-
-		dataSize = config_.spreading_ * sizeof(int) * clusterNodes_.size();
-
->>>>>>> 700e6be944a45c491466040a8f54c333a4307495
 		tdmaSchedule_.assign(clusterNodes_.begin(), clusterNodes_.end());
 
 		send(
@@ -738,13 +573,7 @@ void LeachAppWithResignation::createSchedule()
 			dataSize,
 			dist_,
 			code_);
-
-<<<<<<< HEAD
 		//listenJOINREQ_ = false;
-=======
-		listenJOINREQ_ = false;
->>>>>>> 700e6be944a45c491466040a8f54c333a4307495
-
 
 		frameTime_   = (5 + clusterNodes_.size()) * config_.ssSlotTime_;
 		lstRndDelay_ = Random::uniform(0, 0.01);
@@ -753,40 +582,15 @@ void LeachAppWithResignation::createSchedule()
 		Scheduler::instance().schedule(
 			eventHandler_,
 			new LeachEvent(&LeachAppWithResignation::sendDataToBS),
-<<<<<<< HEAD
       //Scheduler::instance().clock() +xmitTime_);
       xmitTime_);
 	 }
-=======
-      Scheduler::instance().clock() +xmitTime_);
-      //xmitTime_);
-	}
->>>>>>> 700e6be944a45c491466040a8f54c333a4307495
 }
 
 /*********************************************************/
 
 void LeachAppWithResignation::recv(int type, double distance, int link_dst, int size, char * meta, int meta_size, int src_mac, int src_lnk)
 {
-<<<<<<< HEAD
-=======
-  double energy_ = ((Battery *) sensor_node_->energy_model())->energy();
-  //printf("Current energy: %f out of %f.\n", energy_, initial_energy_);
-
-  if (initial_energy_ == 0) {
-    initial_energy_ = energy_;
-  }
-
-  if (isClusterHead()  && energy_ < initial_energy_ * 0.99) {
-    initial_energy_ = energy_;
-
-    Scheduler::instance().schedule(
-      eventHandler_,
-      new LeachEvent(&LeachAppWithResignation::challegeNodeAsNewClusterHead),
-      Scheduler::instance().clock());
-    //  return;
-  }
->>>>>>> 700e6be944a45c491466040a8f54c333a4307495
 //  printf("Receiving... %d\n", type);
 
   #ifdef CHATO
@@ -860,11 +664,6 @@ void LeachAppWithResignation::recv(int type, double distance, int link_dst, int 
   			  //printf(stderr, "Unknown received data type on LeachAp %d!\n", type);
   				//exit(-1);
   		}
-<<<<<<< HEAD
-
-=======
-  //	else
->>>>>>> 700e6be944a45c491466040a8f54c333a4307495
   //		fprintf(stderr, "Received a packet addressed to another node!\n");
 }
 
@@ -879,11 +678,7 @@ void LeachAppWithResignation::recvChallengeNode(char * msg, int size, double dis
 			*((int *) msg),
 			Scheduler::instance().clock());
 
-<<<<<<< HEAD
       acceptChallengeAsClusterHead(*((int *) msg));
-=======
-      acceptChallengeAsClusterHead(src);
->>>>>>> 700e6be944a45c491466040a8f54c333a4307495
 }
 
 void LeachAppWithResignation::recvAcceptChallengeNode(char * msg, int size, double distance, int src, int lnk_src)
@@ -902,11 +697,7 @@ void LeachAppWithResignation::recvAcceptChallengeNode(char * msg, int size, doub
 
 void LeachAppWithResignation::recvClusterHeadResignNode(char * msg, int size, double distance, int src, int lnk_src)
 {
-<<<<<<< HEAD
   if (!isClusterHead() && currentCH_ == lnk_src) {
-=======
-  if (!isClusterHead()) {
->>>>>>> 700e6be944a45c491466040a8f54c333a4307495
     currentCH_ = *(int *) msg;
 
     printf("%d received LEACH_RESIGN_CH from %d (mac = %d, distance = %lf, code = %d) at %lf\n",
@@ -916,7 +707,6 @@ void LeachAppWithResignation::recvClusterHeadResignNode(char * msg, int size, do
       distance,
       *((int *) msg),
       Scheduler::instance().clock());
-<<<<<<< HEAD
   } else if(!isClusterHead()) {
     // printf("%d received LEACH_RESIGN_CH but is NOT  a previous member from %d (mac = %d, distance = %lf, code = %d) at %lf\n",
     //   sensor_node_->nodeid(),
@@ -925,8 +715,6 @@ void LeachAppWithResignation::recvClusterHeadResignNode(char * msg, int size, do
     //   distance,
     //   *((int *) msg),
     //   Scheduler::instance().clock());
-=======
->>>>>>> 700e6be944a45c491466040a8f54c333a4307495
   }
 }
 
@@ -936,11 +724,7 @@ void LeachAppWithResignation::recvADV_CH(char * msg, int size, double distance, 
 	{
 		chadv element;
 
-<<<<<<< HEAD
 		if (!isClusterHead()) {
-=======
-		if (!isClusterHead())
->>>>>>> 700e6be944a45c491466040a8f54c333a4307495
 			printf("%d received ADV_CH from %d (mac = %d, distance = %lf, code = %d) at %lf\n",
 				sensor_node_->nodeid(),
 				lnk_src,
@@ -948,7 +732,6 @@ void LeachAppWithResignation::recvADV_CH(char * msg, int size, double distance, 
 				distance,
 				*((int *) msg),
 				Scheduler::instance().clock());
-<<<<<<< HEAD
     } else {
       printf("%d received ADV_CH but is CLUSTER HEAD from %d (mac = %d, distance = %lf, code = %d) at %lf\n",
 				sensor_node_->nodeid(),
@@ -958,8 +741,6 @@ void LeachAppWithResignation::recvADV_CH(char * msg, int size, double distance, 
 				*((int *) msg),
 				Scheduler::instance().clock());
     }
-=======
->>>>>>> 700e6be944a45c491466040a8f54c333a4307495
 
 		element.nodeid   = lnk_src;
 		element.distance = distance;
@@ -987,7 +768,6 @@ void LeachAppWithResignation::recvJOIN_REQ(char * msg, int size)
 
 	if (listenJOINREQ_)
 	{
-<<<<<<< HEAD
     double energy_ = ((Battery *) sensor_node_->energy_model())->energy();
 		printf("%d received JOIN_REQ from %d at %lf with energy: %f initial energy %f \n",
 			sensor_node_->nodeid(),
@@ -1021,19 +801,6 @@ void LeachAppWithResignation::recvJOIN_REQ(char * msg, int size)
       //challegeNodeAsNewClusterHead();
       //  return;
     }
-=======
-		printf("%d received JOIN_REQ from %d at %lf\n",
-			sensor_node_->nodeid(),
-			*((int *) msg),
-			Scheduler::instance().clock());
-
-		clusterNodes_.push_back(*((int *) msg));
-
-    // Scheduler::instance().schedule(
-    //   eventHandler_,
-    //   new LeachEvent(&LeachAppWithResignation::challegeNodeAsNewClusterHead),
-    //   xmitTime_);
->>>>>>> 700e6be944a45c491466040a8f54c333a4307495
 	}
 	else
 		printf("%d received a late JOIN_REQ from %d at %lf\n",
@@ -1078,7 +845,6 @@ void LeachAppWithResignation::recvADV_SCH(char * msg, int size, int src)
 					Scheduler::instance().schedule(
 						eventHandler_,
 						new LeachEvent(&LeachAppWithResignation::sendData),
-<<<<<<< HEAD
           //  Scheduler::instance().clock()+xmitTime_);
             xmitTime_);
             return;
@@ -1086,17 +852,6 @@ void LeachAppWithResignation::recvADV_SCH(char * msg, int size, int src)
 				}
 				//else
 				//	printf("teste!!!!!!!\n");
-
-=======
-            Scheduler::instance().clock()+xmitTime_);
-            //xmitTime_);
-
-					goToSleep();
-				}
-				else
-					printf("teste!!!!!!!\n");
-				return;
->>>>>>> 700e6be944a45c491466040a8f54c333a4307495
 			}
 
 		// There is no time slot available
@@ -1138,10 +893,7 @@ void LeachAppWithResignation::recvBSHello(char * msg, int size, double distance)
 
 void LeachAppWithResignation::sendData()
 {
-<<<<<<< HEAD
-  return;
-=======
->>>>>>> 700e6be944a45c491466040a8f54c333a4307495
+  //return;
 	int    dataSize;
 	double xmitat;
 
@@ -1173,13 +925,8 @@ void LeachAppWithResignation::sendData()
 		// sensedData_ = new SensedData();
 		clearSensedData();
 
-<<<<<<< HEAD
 	//	if (!isClusterHead())
 			//goToSleep();
-=======
-		if (!isClusterHead())
-			goToSleep();
->>>>>>> 700e6be944a45c491466040a8f54c333a4307495
 	}
 
 	xmitat = Scheduler::instance().clock() + frameTime_;
@@ -1188,13 +935,8 @@ void LeachAppWithResignation::sendData()
 		Scheduler::instance().schedule(
 			eventHandler_,
 			new LeachEvent(&LeachAppWithResignation::sendData),
-<<<<<<< HEAD
       //Scheduler::instance().clock()+frameTime_);
       frameTime_);
-=======
-      Scheduler::instance().clock()+frameTime_);
-      //frameTime_);
->>>>>>> 700e6be944a45c491466040a8f54c333a4307495
 }
 
 void LeachAppWithResignation::send(int mac_dst, int link_dst, int type, char * msg, int msg_size, int data_size, double dist, int code)
@@ -1245,10 +987,7 @@ void LeachAppWithResignation::send(int mac_dst, int link_dst, int type, SensedDa
 
 void LeachAppWithResignation::sendDataToBS()
 {
-<<<<<<< HEAD
   //return;
-=======
->>>>>>> 700e6be944a45c491466040a8f54c333a4307495
 	int    dataSize, compressedSize;
 	double dist;
 	double xmitat;
@@ -1258,11 +997,7 @@ void LeachAppWithResignation::sendDataToBS()
 	xmitat       = rndDelay - lstRndDelay_ + frameTime_;
 	lstRndDelay_ = rndDelay;
 
-<<<<<<< HEAD
 	if (sensedData_->count() > 100)
-=======
-	if (sensedData_->count() > 0)
->>>>>>> 700e6be944a45c491466040a8f54c333a4307495
 	{
 		dataSize = config_.spreading_ * (BYTES_ID * sensedData_->msgSize() + config_.sigSize_);
 
@@ -1277,11 +1012,8 @@ void LeachAppWithResignation::sendDataToBS()
 		sensedData_->timeStamp() = Scheduler::instance().clock();
 		sensedData_->node_id() = sensor_node_->nodeid();
 
-<<<<<<< HEAD
-    printf("Destinaton id is %d\n",destination_id_);
+    //printf("Destinaton id is %d\n",destination_id_);
 
-=======
->>>>>>> 700e6be944a45c491466040a8f54c333a4307495
 		send(
 			MAC_BROADCAST,
 			destination_id_,
@@ -1291,25 +1023,17 @@ void LeachAppWithResignation::sendDataToBS()
 			bsDist_,
 			config_.bsCode_);
 
-<<<<<<< HEAD
   	// //	if (!isClusterHead())
   	// 		//goToSleep();
     //
     //  printf("Clear sensed data of %d\n",sensor_node_->nodeid());
 	 	clearSensedData();
-=======
-		if (!isClusterHead())
-			goToSleep();
-
-		clearSensedData();
->>>>>>> 700e6be944a45c491466040a8f54c333a4307495
 	}
 
 	if (xmitat + endFrmTime_ < nextChangeTime_ - 10 * config_.ssSlotTime_)
 		Scheduler::instance().schedule(
 			eventHandler_,
 			new LeachEvent(&LeachAppWithResignation::sendDataToBS),
-<<<<<<< HEAD
       //Scheduler::instance().clock() + xmitat);
       xmitat);
 
@@ -1333,10 +1057,6 @@ void LeachAppWithResignation::sendDataToBS()
     //   //  return;
     // }
   //	else
-=======
-      Scheduler::instance().clock() + xmitat);
-      //xmitat);
->>>>>>> 700e6be944a45c491466040a8f54c333a4307495
 }
 
 void LeachAppWithResignation::sendMyDataToBS()
